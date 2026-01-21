@@ -4,22 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Deejay Set Collection</title>
+    <!-- Markdown rendering (client-side) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- HTML sanitization to prevent XSS from markdown content -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
   </head>
   <body>
-    <h1>Deejay Set Collection</h1>
+    <h1 style="margin: 0;">Deejay Set Collection</h1>
 
-    <p>
-      Data source:
-      <a href="/site_data/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
-    </p>
+    <nav id="nav" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;"></nav>
 
-    <label for="search">Search:</label>
-    <input id="search" type="search" placeholder="Type to filter…" style="min-width: 280px;" />
-    <div id="status" style="margin-top: 8px; color: #666;"></div>
-
-    <div id="meta" style="margin-top: 12px;"></div>
-    <div id="content" style="margin-top: 16px;"></div>
-
+    <div id="page" style="margin-top: 18px;">
+      <!-- Page content is rendered here -->
+    </div>
     <script>
       function escapeHtml(str) {
         return String(str)
@@ -34,10 +31,50 @@
         return String(str || "").toLowerCase();
       }
 
+      // ------------------------------
+      // Pages
+      // ------------------------------
+      // Home page is the existing JSON-powered collection view.
+      // Other pages render markdown files from /pages/*.md.
+      const PAGES = [
+        { id: "home", title: "Home", kind: "home" },
+        { id: "about", title: "About", kind: "md", path: "/pages/about.md" },
+        { id: "how", title: "How it works", kind: "md", path: "/pages/how-it-works.md" },
+        { id: "changelog", title: "Changelog", kind: "md", path: "/pages/changelog.md" },
+      ];
+
+      function getRouteId() {
+        // Hash routes:
+        //   #/            => home
+        //   #/about       => about
+        //   #/how         => how
+        //   #/changelog   => changelog
+        const h = (location.hash || "#/home").trim();
+        const m = h.match(/^#\/?([a-zA-Z0-9-_]+)?/);
+        const id = (m && m[1]) ? m[1] : "home";
+        return id;
+      }
+
+      function setActiveNav(routeId) {
+        document.querySelectorAll("#nav a[data-page-id]").forEach((a) => {
+          const isActive = a.getAttribute("data-page-id") === routeId;
+          a.style.fontWeight = isActive ? "700" : "400";
+          a.style.textDecoration = isActive ? "underline" : "none";
+        });
+      }
+
+      function renderNav() {
+        const nav = document.getElementById("nav");
+        nav.innerHTML = PAGES.map((p) => {
+          return `<a href="#/${escapeHtml(p.id)}" data-page-id="${escapeHtml(p.id)}" style="color: inherit;">${escapeHtml(p.title)}</a>`;
+        }).join("");
+      }
+
+      // ------------------------------
+      // Home (existing collection view)
+      // ------------------------------
       function renderCollection(data, query) {
         const q = normalizeForSearch(query);
-        const content = document.getElementById("content");
-        const status = document.getElementById("status");
 
         const foldersRaw = Array.isArray(data?.folders) ? data.folders : [];
 
@@ -101,10 +138,10 @@
                 const label = it?.label || it?.title || "(untitled)";
                 const url = it?.url || "#";
                 const date = it?.date
-                  ? `<span style=\"font-family: monospace;\">${escapeHtml(it.date)}</span> — `
+                  ? `<span style="font-family: monospace;">${escapeHtml(it.date)}</span> — `
                   : "";
                 const title = it?.title && it?.title !== label ? ` <span>(${escapeHtml(it.title)})</span>` : "";
-                return `<li>${date}<a href=\"${escapeHtml(url)}\" target=\"_blank\" rel=\"noopener\">${escapeHtml(label)}</a>${title}</li>`;
+                return `<li>${date}<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>${title}</li>`;
               })
               .join("");
 
@@ -117,8 +154,8 @@
               <section style="margin-top: 18px;">
                 <details${openAttr}>
                   <summary style="cursor: pointer; user-select: none;">
-                    <span style=\"font-weight: 700;\">${escapeHtml(folderName)}</span>
-                    <span style=\"color: #666; margin-left: 8px;\">(${filtered.length})</span>
+                    <span style="font-weight: 700;">${escapeHtml(folderName)}</span>
+                    <span style="color: #666; margin-left: 8px;">(${filtered.length})</span>
                   </summary>
                   <ul style="margin-top: 10px;">${list}</ul>
                 </details>
@@ -127,14 +164,34 @@
           })
           .join("");
 
-        content.innerHTML = folderHtml || "<p>No matching items.</p>";
-        status.textContent = q ? `${totalMatched} matching item(s)` : `${totalMatched} total item(s)`;
+        return {
+          html: folderHtml || "<p>No matching items.</p>",
+          totalMatched,
+          queryActive: Boolean(q),
+        };
       }
 
-      async function main() {
+      async function renderHomePage() {
+        const page = document.getElementById("page");
+
+        page.innerHTML = `
+          <p>
+            Data source:
+            <a href="/site_data/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
+          </p>
+
+          <label for="search">Search:</label>
+          <input id="search" type="search" placeholder="Type to filter…" style="min-width: 280px;" />
+          <div id="status" style="margin-top: 8px; color: #666;"></div>
+
+          <div id="meta" style="margin-top: 12px;"></div>
+          <div id="content" style="margin-top: 16px;"></div>
+        `;
+
         const meta = document.getElementById("meta");
         const search = document.getElementById("search");
         const status = document.getElementById("status");
+        const content = document.getElementById("content");
 
         meta.textContent = "Loading…";
 
@@ -144,17 +201,96 @@
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           data = await res.json();
         } catch (err) {
-          meta.innerHTML = `<p style=\"color: #b00020;\">Failed to load JSON: ${escapeHtml(err?.message || err)}</p>`;
+          meta.innerHTML = `<p style="color: #b00020;">Failed to load JSON: ${escapeHtml(err?.message || err)}</p>`;
           status.textContent = "";
           return;
         }
 
         const generatedAt = data?.generated_at ? escapeHtml(data.generated_at) : "(unknown)";
-        meta.innerHTML = `<div><strong>Generated:</strong> <span style=\"font-family: monospace;\">${generatedAt}</span></div>`;
+        meta.innerHTML = `<div><strong>Generated:</strong> <span style="font-family: monospace;">${generatedAt}</span></div>`;
 
-        const rerender = () => renderCollection(data, search.value);
+        const rerender = () => {
+          const { html, totalMatched, queryActive } = renderCollection(data, search.value);
+          content.innerHTML = html;
+          status.textContent = queryActive ? `${totalMatched} matching item(s)` : `${totalMatched} total item(s)`;
+        };
+
         search.addEventListener("input", rerender);
         rerender();
+      }
+
+      // ------------------------------
+      // Markdown pages
+      // ------------------------------
+      function renderMarkdownLoading(title) {
+        const page = document.getElementById("page");
+        page.innerHTML = `
+          <h2 style="margin: 0;">${escapeHtml(title)}</h2>
+          <p style="color: #666; margin-top: 10px;">Loading…</p>
+        `;
+      }
+
+      function renderMarkdownError(title, message) {
+        const page = document.getElementById("page");
+        page.innerHTML = `
+          <h2 style="margin: 0;">${escapeHtml(title)}</h2>
+          <p style="color: #b00020; margin-top: 10px;">Failed to load markdown: ${escapeHtml(message)}</p>
+        `;
+      }
+
+      function renderMarkdownHtml(title, html) {
+        const page = document.getElementById("page");
+        page.innerHTML = `
+          <h2 style="margin: 0;">${escapeHtml(title)}</h2>
+          <div style="margin-top: 12px; line-height: 1.5;">
+            ${html}
+          </div>
+        `;
+      }
+
+      async function renderMarkdownPage(pageDef) {
+        renderMarkdownLoading(pageDef.title);
+
+        let md;
+        try {
+          const res = await fetch(pageDef.path, { cache: "no-store" });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          md = await res.text();
+        } catch (err) {
+          renderMarkdownError(pageDef.title, err?.message || String(err));
+          return;
+        }
+
+        // marked -> HTML, then sanitize
+        const rawHtml = window.marked.parse(md);
+        const safeHtml = window.DOMPurify.sanitize(rawHtml, {
+          USE_PROFILES: { html: true },
+        });
+
+        renderMarkdownHtml(pageDef.title, safeHtml);
+      }
+
+      // ------------------------------
+      // Router
+      // ------------------------------
+      async function route() {
+        const routeId = getRouteId();
+        setActiveNav(routeId);
+
+        const pageDef = PAGES.find((p) => p.id === routeId) || PAGES[0];
+
+        if (pageDef.kind === "home") {
+          await renderHomePage();
+          return;
+        }
+
+        await renderMarkdownPage(pageDef);
+      }
+
+      function main() {
+        renderNav();
+        window.addEventListener("hashchange", route);
+        route();
       }
 
       main();
