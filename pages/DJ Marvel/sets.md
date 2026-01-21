@@ -1,7 +1,7 @@
 ---
-title: DJ Marvel — Sets
+title: Collection
 ---
 
-# DJ Marvel — Sets
+# Collection
 
-<div data-dj-set-summary data-dj-set-summary-query="DJ Marvel"></div>
+<div data-dj-collection></div>

@@ -339,6 +339,7 @@ async function renderMarkdownPage(pageDef) {
 
     renderMarkdownHtml(title, safeHtml);
     await hydrateDjSetSummary(pageDef);
+    await hydrateWidgets(pageDef);
   } catch (err) {
     renderPageHtml(title, `<p style="color:#b00020;">Failed to load ${escapeHtml(fetchPath)}: ${escapeHtml(err?.message || err)}</p>`);
   }
@@ -515,6 +516,16 @@ async function route(manifest) {
   }
 
   await renderMarkdownPage(pageDef);
+}
+
+async function hydrateWidgets(pageDef) {
+  // DJ collection widget
+  const c = document.querySelector("[data-dj-collection]");
+  if (c) await renderDjCollectionInto(c);
+
+  // DJ set summary widget
+  const s = document.querySelector("[data-dj-set-summary]");
+  if (s) await hydrateDjSetSummary(pageDef);
 }
 
 async function main() {
