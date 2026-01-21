@@ -4,296 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Deejay Set Collection</title>
-    <!-- Markdown rendering (client-side) -->
+
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- HTML sanitization to prevent XSS from markdown content -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 980px; margin: 28px auto; padding: 0 16px; }
+      header { display: flex; flex-direction: column; gap: 10px; }
+      #nav { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; }
+
+      #nav a { color: inherit; text-decoration: none; padding: 4px 6px; border-radius: 6px; }
+      #nav a.active { font-weight: 700; text-decoration: underline; }
+
+      .nav-group { border: 1px solid #ddd; border-radius: 8px; padding: 6px 8px; }
+      .nav-group > summary { cursor: pointer; user-select: none; font-weight: 600; }
+      .nav-group-items { margin-top: 6px; display: flex; flex-direction: column; gap: 6px; }
+      main { margin-top: 18px; }
+    </style>
+
+    <script defer src="/app.js"></script>
   </head>
   <body>
-    <h1 style="margin: 0;">Deejay Set Collection</h1>
+    <header>
+      <h1 style="margin: 0;">Deejay Set Collection</h1>
+      <nav id="nav" aria-label="Site navigation"></nav>
+    </header>
 
-    <nav id="nav" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px;"></nav>
-
-    <div id="page" style="margin-top: 18px;">
-      <!-- Page content is rendered here -->
-    </div>
-    <script>
-      function escapeHtml(str) {
-        return String(str)
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#39;");
-      }
-
-      function normalizeForSearch(str) {
-        return String(str || "").toLowerCase();
-      }
-
-      // ------------------------------
-      // Pages
-      // ------------------------------
-      // Home page is the existing JSON-powered collection view.
-      // Other pages render markdown files from /pages/*.md.
-      const PAGES = [
-        { id: "home", title: "Home", kind: "home" },
-        { id: "about", title: "About", kind: "md", path: "/pages/about.md" },
-        { id: "how", title: "How it works", kind: "md", path: "/pages/how-it-works.md" },
-        { id: "changelog", title: "Changelog", kind: "md", path: "/pages/changelog.md" },
-      ];
-
-      function getRouteId() {
-        // Hash routes:
-        //   #/            => home
-        //   #/about       => about
-        //   #/how         => how
-        //   #/changelog   => changelog
-        const h = (location.hash || "#/home").trim();
-        const m = h.match(/^#\/?([a-zA-Z0-9-_]+)?/);
-        const id = (m && m[1]) ? m[1] : "home";
-        return id;
-      }
-
-      function setActiveNav(routeId) {
-        document.querySelectorAll("#nav a[data-page-id]").forEach((a) => {
-          const isActive = a.getAttribute("data-page-id") === routeId;
-          a.style.fontWeight = isActive ? "700" : "400";
-          a.style.textDecoration = isActive ? "underline" : "none";
-        });
-      }
-
-      function renderNav() {
-        const nav = document.getElementById("nav");
-        nav.innerHTML = PAGES.map((p) => {
-          return `<a href="#/${escapeHtml(p.id)}" data-page-id="${escapeHtml(p.id)}" style="color: inherit;">${escapeHtml(p.title)}</a>`;
-        }).join("");
-      }
-
-      // ------------------------------
-      // Home (existing collection view)
-      // ------------------------------
-      function renderCollection(data, query) {
-        const q = normalizeForSearch(query);
-
-        const foldersRaw = Array.isArray(data?.folders) ? data.folders : [];
-
-        function folderSortKey(name) {
-          const n = String(name || "");
-          const lower = n.toLowerCase();
-          if (lower === "summary") return { group: 0, year: -1, label: lower };
-
-          // Year-like folder (e.g., "2026")
-          const yearMatch = lower.match(/^\d{4}$/);
-          if (yearMatch) return { group: 1, year: Number(lower), label: lower };
-
-          return { group: 2, year: -1, label: lower };
-        }
-
-        const folders = [...foldersRaw].sort((a, b) => {
-          const ka = folderSortKey(a?.name);
-          const kb = folderSortKey(b?.name);
-
-          if (ka.group !== kb.group) return ka.group - kb.group;
-
-          // For years: descending
-          if (ka.group === 1 && kb.group === 1) return kb.year - ka.year;
-
-          // Otherwise: ascending alpha
-          return ka.label.localeCompare(kb.label);
-        });
-
-        // Determine which folder should be open by default.
-        // Summary is always open; also open the first year folder (most recent) when present.
-        const firstYearFolderName = folders.find((f) => String(f?.name || "").match(/^\d{4}$/))?.name;
-
-        let totalMatched = 0;
-
-        const folderHtml = folders
-          .map((folder) => {
-            const folderName = folder?.name || "(Unnamed folder)";
-            const items = Array.isArray(folder?.items) ? folder.items : [];
-
-            const filtered = items.filter((it) => {
-              if (!q) return true;
-              const haystack = [
-                it?.date,
-                it?.title,
-                it?.label,
-                it?.url,
-                folderName,
-              ]
-                .filter(Boolean)
-                .map(normalizeForSearch)
-                .join(" | ");
-              return haystack.includes(q);
-            });
-
-            if (q && filtered.length === 0) return "";
-
-            totalMatched += filtered.length;
-
-            const list = filtered
-              .map((it) => {
-                const label = it?.label || it?.title || "(untitled)";
-                const url = it?.url || "#";
-                const date = it?.date
-                  ? `<span style="font-family: monospace;">${escapeHtml(it.date)}</span> — `
-                  : "";
-                const title = it?.title && it?.title !== label ? ` <span>(${escapeHtml(it.title)})</span>` : "";
-                return `<li>${date}<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>${title}</li>`;
-              })
-              .join("");
-
-            const lower = String(folderName).toLowerCase();
-            const isSummary = lower === "summary";
-            const isFirstYear = firstYearFolderName && folderName === firstYearFolderName;
-            const openAttr = isSummary || isFirstYear ? " open" : "";
-
-            return `
-              <section style="margin-top: 18px;">
-                <details${openAttr}>
-                  <summary style="cursor: pointer; user-select: none;">
-                    <span style="font-weight: 700;">${escapeHtml(folderName)}</span>
-                    <span style="color: #666; margin-left: 8px;">(${filtered.length})</span>
-                  </summary>
-                  <ul style="margin-top: 10px;">${list}</ul>
-                </details>
-              </section>
-            `;
-          })
-          .join("");
-
-        return {
-          html: folderHtml || "<p>No matching items.</p>",
-          totalMatched,
-          queryActive: Boolean(q),
-        };
-      }
-
-      async function renderHomePage() {
-        const page = document.getElementById("page");
-
-        page.innerHTML = `
-          <p>
-            Data source:
-            <a href="/site_data/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
-          </p>
-
-          <label for="search">Search:</label>
-          <input id="search" type="search" placeholder="Type to filter…" style="min-width: 280px;" />
-          <div id="status" style="margin-top: 8px; color: #666;"></div>
-
-          <div id="meta" style="margin-top: 12px;"></div>
-          <div id="content" style="margin-top: 16px;"></div>
-        `;
-
-        const meta = document.getElementById("meta");
-        const search = document.getElementById("search");
-        const status = document.getElementById("status");
-        const content = document.getElementById("content");
-
-        meta.textContent = "Loading…";
-
-        let data;
-        try {
-          const res = await fetch("/site_data/deejay_set_collection.json", { cache: "no-store" });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          data = await res.json();
-        } catch (err) {
-          meta.innerHTML = `<p style="color: #b00020;">Failed to load JSON: ${escapeHtml(err?.message || err)}</p>`;
-          status.textContent = "";
-          return;
-        }
-
-        const generatedAt = data?.generated_at ? escapeHtml(data.generated_at) : "(unknown)";
-        meta.innerHTML = `<div><strong>Generated:</strong> <span style="font-family: monospace;">${generatedAt}</span></div>`;
-
-        const rerender = () => {
-          const { html, totalMatched, queryActive } = renderCollection(data, search.value);
-          content.innerHTML = html;
-          status.textContent = queryActive ? `${totalMatched} matching item(s)` : `${totalMatched} total item(s)`;
-        };
-
-        search.addEventListener("input", rerender);
-        rerender();
-      }
-
-      // ------------------------------
-      // Markdown pages
-      // ------------------------------
-      function renderMarkdownLoading(title) {
-        const page = document.getElementById("page");
-        page.innerHTML = `
-          <h2 style="margin: 0;">${escapeHtml(title)}</h2>
-          <p style="color: #666; margin-top: 10px;">Loading…</p>
-        `;
-      }
-
-      function renderMarkdownError(title, message) {
-        const page = document.getElementById("page");
-        page.innerHTML = `
-          <h2 style="margin: 0;">${escapeHtml(title)}</h2>
-          <p style="color: #b00020; margin-top: 10px;">Failed to load markdown: ${escapeHtml(message)}</p>
-        `;
-      }
-
-      function renderMarkdownHtml(title, html) {
-        const page = document.getElementById("page");
-        page.innerHTML = `
-          <h2 style="margin: 0;">${escapeHtml(title)}</h2>
-          <div style="margin-top: 12px; line-height: 1.5;">
-            ${html}
-          </div>
-        `;
-      }
-
-      async function renderMarkdownPage(pageDef) {
-        renderMarkdownLoading(pageDef.title);
-
-        let md;
-        try {
-          const res = await fetch(pageDef.path, { cache: "no-store" });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          md = await res.text();
-        } catch (err) {
-          renderMarkdownError(pageDef.title, err?.message || String(err));
-          return;
-        }
-
-        // marked -> HTML, then sanitize
-        const rawHtml = window.marked.parse(md);
-        const safeHtml = window.DOMPurify.sanitize(rawHtml, {
-          USE_PROFILES: { html: true },
-        });
-
-        renderMarkdownHtml(pageDef.title, safeHtml);
-      }
-
-      // ------------------------------
-      // Router
-      // ------------------------------
-      async function route() {
-        const routeId = getRouteId();
-        setActiveNav(routeId);
-
-        const pageDef = PAGES.find((p) => p.id === routeId) || PAGES[0];
-
-        if (pageDef.kind === "home") {
-          await renderHomePage();
-          return;
-        }
-
-        await renderMarkdownPage(pageDef);
-      }
-
-      function main() {
-        renderNav();
-        window.addEventListener("hashchange", route);
-        route();
-      }
-
-      main();
-    </script>
+    <main id="page">
+      <!-- routed content renders here -->
+    </main>
   </body>
 </html>

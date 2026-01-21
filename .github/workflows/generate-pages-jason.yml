@@ -1,0 +1,130 @@
+name: Generate pages/pages.json
+
+on:
+  push:
+    branches:
+      - main
+      - test-feature
+    paths:
+      - "pages/**"
+      - ".github/workflows/generate-pages-json.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-json-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate pages/pages.json
+        run: |
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          PAGES_DIR = Path("pages")
+          OUT_PATH = PAGES_DIR / "pages.json"
+
+          def title_from_slug(slug: str) -> str:
+            # "how-it-works" -> "How it works"
+            s = slug.replace("_", " ").replace("-", " ").strip()
+            return s[:1].upper() + s[1:] if s else slug
+
+          def extract_frontmatter_title(text: str):
+            # Very small frontmatter parser:
+            # ---
+            # title: Something
+            # ---
+            if not text.startswith("---"):
+              return None
+            m = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, flags=re.DOTALL)
+            if not m:
+              return None
+            fm = m.group(1)
+            # title: ...
+            tm = re.search(r"(?m)^\s*title\s*:\s*(.+?)\s*$", fm)
+            if not tm:
+              return None
+            raw = tm.group(1).strip()
+            # strip optional quotes
+            raw = re.sub(r"^['\"]|['\"]$", "", raw)
+            return raw.strip() or None
+
+          def is_md_file(p: Path) -> bool:
+            return p.is_file() and p.suffix.lower() == ".md"
+
+          # Collect markdown pages
+          md_files = sorted([p for p in PAGES_DIR.rglob("*.md") if is_md_file(p)])
+
+          items = []
+
+          for md in md_files:
+            # id maps to /pages/<id>.md, so use path relative to /pages without extension
+            rel = md.relative_to(PAGES_DIR).as_posix()
+            page_id = rel[:-3]  # drop ".md"
+
+            text = md.read_text(encoding="utf-8", errors="replace")
+            title = extract_frontmatter_title(text) or title_from_slug(md.stem)
+
+            items.append({
+              "id": page_id,
+              "title": title,
+            })
+
+          # Inject special DJ page (non-md) into nav
+          # (Your router will treat kind:"dj" specially.)
+          dj_item = {"id": "dj/collection", "title": "Collection", "kind": "dj"}
+
+          # Deduplicate by id (prefer explicit special kind if collision)
+          by_id = {}
+          for it in items:
+            by_id[it["id"]] = it
+          by_id[dj_item["id"]] = dj_item
+
+          # Order:
+          # 1) home (if exists)
+          # 2) dj/collection
+          # 3) root pages (no slash) alpha
+          # 4) subfolder pages alpha by folder then title
+          def sort_key(it):
+            pid = it["id"]
+            if pid == "home":
+              return (0, "", "")
+            if pid == "dj/collection":
+              return (1, "", "")
+            parts = pid.split("/")
+            if len(parts) == 1:
+              return (2, "", it.get("title","").lower())
+            return (3, parts[0].lower(), "/".join(parts[1:]).lower())
+
+          final = sorted(by_id.values(), key=sort_key)
+
+          OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+          OUT_PATH.write_text(json.dumps(final, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          print(f"Wrote {OUT_PATH} with {len(final)} entries")
+          PY
+
+      - name: Commit changes if needed
+        run: |
+          if git diff --quiet -- pages/pages.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add pages/pages.json
+          git commit -m "chore: regenerate pages/pages.json"
+          git push
