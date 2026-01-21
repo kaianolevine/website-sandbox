@@ -153,13 +153,20 @@ async function renderDjSetSummaryInto(container, djName) {
   // Filter items where title/label contains the DJ name (case-insensitive)
   const q = normalizeForSearch(name);
 
+  function normalizeToken(s) {
+    return normalizeForSearch(s).replace(/[^a-z0-9]+/g, "");
+  }
+
+  const qKey = normalizeToken(name);
+
   const matches = [];
   for (const folder of foldersRaw) {
     const folderName = folder?.name || "";
     const items = Array.isArray(folder?.items) ? folder.items : [];
     for (const it of items) {
       const hay = [it?.title, it?.label].filter(Boolean).map(normalizeForSearch).join(" | ");
-      if (hay.includes(q)) {
+      const hayKey = normalizeToken(hay);
+      if (hay.includes(q) || (qKey && hayKey.includes(qKey))) {
         matches.push({ folderName, it });
       }
     }
@@ -288,7 +295,11 @@ async function renderMarkdownPage(pageDef) {
     const md = await res.text();
 
     const rawHtml = window.marked.parse(md);
-    const safeHtml = window.DOMPurify.sanitize(rawHtml, { USE_PROFILES: { html: true } });
+    const safeHtml = window.DOMPurify.sanitize(rawHtml, {
+      USE_PROFILES: { html: true },
+      // Ensure our embedding marker survives sanitization
+      ADD_ATTR: ["data-dj-set-summary"],
+    });
 
     renderMarkdownHtml(title, safeHtml);
     await hydrateDjSetSummary(pageDef);
