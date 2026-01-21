@@ -1,11 +1,10 @@
-# How it works
+## Locate
 
-1. A GitHub Action generates `site_data/deejay_set_collection.json`
-2. Cloudflare Pages serves the static site
-3. **Home** loads the JSON and renders the folder + set list
-4. Other pages are Markdown rendered client-side
-
-## Adding a new page
-
-1. Add an entry to the `PAGES` array in `index.html`
-2. Create the corresponding file in `/pages/*.md`
+<div style="margin-top: 12px;">
+  <iframe
+    src="https://calendar.google.com/calendar/embed?height=700&wkst=1&ctz=America%2FChicago&showPrint=0&showCalendars=0&showTitle=0&src=a2didHZuYXRtZmNzNmhoaGh1dXR1MDY3dnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23616161"
+    style="border:0; width:100%; height:700px;"
+    frameborder="0"
+    scrolling="no">
+  </iframe>
+</div>
