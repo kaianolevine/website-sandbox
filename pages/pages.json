@@ -1,10 +1,5 @@
 [
   {
-    "id": "home",
-    "title": "Home",
-    "kind": "home"
-  },
-  {
     "id": "dj/collection",
     "title": "Collection",
 
