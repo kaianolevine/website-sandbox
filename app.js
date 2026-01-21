@@ -73,18 +73,6 @@ function ensureSpecialPages(manifest) {
     out.unshift({ id: "home", title: "Home", kind: "home" });
   }
 
-  // Ensure DJ collection exists for navigation
-  if (!out.some((p) => p?.id === "dj/collection")) {
-    const idxHome = out.findIndex((p) => p?.id === "home");
-    const insertAt = idxHome >= 0 ? idxHome + 1 : 0;
-    out.splice(insertAt, 0, { id: "dj/collection", title: "Collection", kind: "dj" });
-  } else {
-    // normalize kind
-    out.forEach((p) => {
-      if (p?.id === "dj/collection" && !p.kind) p.kind = "dj";
-    });
-  }
-
   return out;
 }
 
@@ -254,28 +242,30 @@ function renderDjCollection(data, query) {
   return { html: folderHtml || "<p>No matching items.</p>", totalMatched, queryActive: Boolean(q) };
 }
 
-async function renderDjCollectionPage() {
-  const page = document.getElementById("page");
-  if (!page) return;
+async function renderDjCollectionInto(container) {
+  if (!container) return;
 
-  page.innerHTML = `
+  // Render a self-contained collection UI inside this container.
+  container.innerHTML = `
     <p>
       Data source:
       <a href="site_data/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
     </p>
 
-    <label for="search">Search:</label>
-    <input id="search" type="search" placeholder="Type to filter…" style="min-width: 280px;" />
-    <div id="status" style="margin-top: 8px; color: #666;"></div>
+    <label>Search:</label>
+    <input data-dj-collection-search type="search" placeholder="Type to filter…" style="min-width: 280px;" />
+    <div data-dj-collection-status style="margin-top: 8px; color: #666;"></div>
 
-    <div id="meta" style="margin-top: 12px;"></div>
-    <div id="content" style="margin-top: 16px;"></div>
+    <div data-dj-collection-meta style="margin-top: 12px;"></div>
+    <div data-dj-collection-content style="margin-top: 16px;"></div>
   `;
 
-  const meta = document.getElementById("meta");
-  const search = document.getElementById("search");
-  const status = document.getElementById("status");
-  const content = document.getElementById("content");
+  const meta = container.querySelector("[data-dj-collection-meta]");
+  const search = container.querySelector("[data-dj-collection-search]");
+  const status = container.querySelector("[data-dj-collection-status]");
+  const content = container.querySelector("[data-dj-collection-content]");
+
+  if (!meta || !search || !status || !content) return;
 
   meta.textContent = "Loading…";
 
@@ -334,7 +324,8 @@ async function renderMarkdownPage(pageDef) {
     const rawHtml = window.marked.parse(md);
     const safeHtml = window.DOMPurify.sanitize(rawHtml, {
       USE_PROFILES: { html: true },
-      ADD_ATTR: ["data-dj-set-summary", "data-dj-set-summary-query"]
+      // Allow our markdown-embedded widgets/markers to survive sanitization
+      ADD_ATTR: ["data-dj-collection", "data-dj-set-summary", "data-dj-set-summary-query"],
     });
 
     renderMarkdownHtml(title, safeHtml);
@@ -480,16 +471,18 @@ async function renderDjSetSummaryInto(container, query) {
 }
 
 async function hydrateDjSetSummary(pageDef) {
-  const container = document.querySelector("[data-dj-set-summary]");
-  if (!container) return;
+  const containers = document.querySelectorAll("[data-dj-set-summary]");
+  if (!containers.length) return;
 
   const id = String(pageDef?.id || "");
   const defaultDj = id.includes("/") ? id.split("/")[0] : "";
 
-  const queryAttr = container.getAttribute("data-dj-set-summary-query") || "";
-  const query = String(queryAttr).trim() || defaultDj;
-
-  await renderDjSetSummaryInto(container, query);
+  // Hydrate each summary container independently
+  for (const container of containers) {
+    const queryAttr = container.getAttribute("data-dj-set-summary-query") || "";
+    const query = String(queryAttr).trim() || defaultDj;
+    await renderDjSetSummaryInto(container, query);
+  }
 }
 
 /* =========================
@@ -510,23 +503,15 @@ async function route(manifest) {
     return;
   }
 
-  if (pageDef.kind === "dj" || pageDef.id === "dj/collection") {
-    await renderDjCollectionPage();
-    return;
-  }
-
   await renderMarkdownPage(pageDef);
 }
 
-function hydrateWidgets(pageDef) {
-  document.querySelectorAll("[data-dj-collection]")
-    .forEach(el => renderDjCollectionInto(el));
-
-  document.querySelectorAll("[data-dj-set-summary]")
-    .forEach(el => {
-      const q = el.getAttribute("data-dj-set-summary-query");
-      renderDjSetSummaryInto(el, q);
-    });
+async function hydrateWidgets(pageDef) {
+  // DJ Collection widgets
+  const collections = document.querySelectorAll("[data-dj-collection]");
+  for (const el of collections) {
+    await renderDjCollectionInto(el);
+  }
 }
 
 async function main() {
