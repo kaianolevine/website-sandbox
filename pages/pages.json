@@ -2,7 +2,7 @@
   {
     "id": "dj/collection",
     "title": "Collection",
-
+    "kind": "dj"
   },
   {
     "id": "about",
@@ -34,7 +34,6 @@
   },
   {
     "id": "DJ Marvel/sets",
-    "title": "DJ Marvel — Sets",
-    "kind": "dj"
+    "title": "DJ Marvel — Sets"
   }
 ]
