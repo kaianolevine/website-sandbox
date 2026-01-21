@@ -4,4 +4,4 @@ title: DJ Marvel — Sets
 
 # DJ Marvel — Sets
 
-<div data-dj-set-summary></div>
+<div data-dj-collection></div>
