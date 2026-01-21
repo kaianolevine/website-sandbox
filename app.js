@@ -518,14 +518,15 @@ async function route(manifest) {
   await renderMarkdownPage(pageDef);
 }
 
-async function hydrateWidgets(pageDef) {
-  // DJ collection widget
-  const c = document.querySelector("[data-dj-collection]");
-  if (c) await renderDjCollectionInto(c);
+function hydrateWidgets(pageDef) {
+  document.querySelectorAll("[data-dj-collection]")
+    .forEach(el => renderDjCollectionInto(el));
 
-  // DJ set summary widget
-  const s = document.querySelector("[data-dj-set-summary]");
-  if (s) await hydrateDjSetSummary(pageDef);
+  document.querySelectorAll("[data-dj-set-summary]")
+    .forEach(el => {
+      const q = el.getAttribute("data-dj-set-summary-query");
+      renderDjSetSummaryInto(el, q);
+    });
 }
 
 async function main() {

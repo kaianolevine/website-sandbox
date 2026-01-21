@@ -82,31 +82,26 @@ jobs:
               "title": title,
             })
 
-          # Inject special DJ page (non-md) into nav
-          # (Your router will treat kind:"dj" specially.)
-          dj_item = {"id": "dj/collection", "title": "Collection", "kind": "dj"}
-
-          # Deduplicate by id (prefer explicit special kind if collision)
+          # Deduplicate by id (last one wins)
           by_id = {}
           for it in items:
             by_id[it["id"]] = it
-          by_id[dj_item["id"]] = dj_item
 
           # Order:
           # 1) home (if exists)
-          # 2) dj/collection
-          # 3) root pages (no slash) alpha
-          # 4) subfolder pages alpha by folder then title
+          # 2) root pages (no slash) alpha
+          # 3) subfolder pages alpha by folder then path
           def sort_key(it):
             pid = it["id"]
             if pid == "home":
               return (0, "", "")
-            if pid == "dj/collection":
-              return (1, "", "")
             parts = pid.split("/")
             if len(parts) == 1:
-              return (2, "", it.get("title","").lower())
-            return (3, parts[0].lower(), "/".join(parts[1:]).lower())
+              return (1, "", it.get("title", "").lower())
+            return (2, parts[0].lower(), pid.lower())
+
+          if "home" not in by_id:
+            by_id["home"] = {"id": "home", "title": "Home"}
 
           final = sorted(by_id.values(), key=sort_key)
 
