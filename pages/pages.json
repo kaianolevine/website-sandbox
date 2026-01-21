@@ -1,0 +1,35 @@
+[
+  {
+    "id": "dj/collection",
+    "title": "Collection",
+    "kind": "dj"
+  },
+  {
+    "id": "about",
+    "title": "About"
+  },
+  {
+    "id": "changelog",
+    "title": "Changelog"
+  },
+  {
+    "id": "contact",
+    "title": "Contact"
+  },
+  {
+    "id": "how-it-works",
+    "title": "How it works"
+  },
+  {
+    "id": "locate",
+    "title": "Locate"
+  },
+  {
+    "id": "Booking/Book Now",
+    "title": "Book Now"
+  },
+  {
+    "id": "Booking/Press Kit",
+    "title": "Press Kit"
+  }
+]
