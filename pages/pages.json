@@ -1,7 +1,7 @@
 [
   {
-    "id": "dj/collection",
-    "title": "Collection"
+    "id": "home",
+    "title": "Home"
   },
   {
     "id": "about",
@@ -30,6 +30,10 @@
   {
     "id": "Booking/Press Kit",
     "title": "Press Kit"
+  },
+  {
+    "id": "dj/collection",
+    "title": "Collection"
   },
   {
     "id": "DJ Marvel/sets",
