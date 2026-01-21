@@ -5,3 +5,11 @@ This site is a static view of my DJ set collection, generated from my data pipel
 - Collection data is published as JSON
 - The UI is a lightweight static site (Cloudflare Pages friendly)
 - These pages are just Markdown files rendered in the browser
+
+All Promo Materials
+
+Photos
+
+Bios
+
+Videos
