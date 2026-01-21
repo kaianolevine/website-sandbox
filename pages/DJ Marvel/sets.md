@@ -1,8 +1,7 @@
 ---
-title: Collection
+title: DJ Marvel — Sets
 ---
 
-# Collection
+# DJ Marvel — Sets
 
-<div data-dj-collection></div>
-<div data-dj-set-summary data-query="Swing Boston"></div>
+<div data-dj-set-summary data-dj-set-summary-query="Swing Boston"></div>

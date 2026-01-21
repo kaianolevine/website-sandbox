@@ -334,7 +334,7 @@ async function renderMarkdownPage(pageDef) {
     const rawHtml = window.marked.parse(md);
     const safeHtml = window.DOMPurify.sanitize(rawHtml, {
       USE_PROFILES: { html: true },
-      ADD_ATTR: ["data-dj-collection", "data-dj-set-summary", "data-query"]
+      ADD_ATTR: ["data-dj-set-summary", "data-dj-set-summary-query"]
     });
 
     renderMarkdownHtml(title, safeHtml);
