@@ -1,4 +1,4 @@
-# About
+# Press Kit
 
 This site is a static view of my DJ set collection, generated from my data pipeline.
 
