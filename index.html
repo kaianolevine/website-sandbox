@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Deejay Set Collection</title>
 
+    <!-- Markdown rendering + sanitization -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
 
@@ -19,19 +20,20 @@
       .nav-group { border: 1px solid #ddd; border-radius: 8px; padding: 6px 8px; }
       .nav-group > summary { cursor: pointer; user-select: none; font-weight: 600; }
       .nav-group-items { margin-top: 6px; display: flex; flex-direction: column; gap: 6px; }
+
       main { margin-top: 18px; }
     </style>
 
+    <!-- IMPORTANT: relative path -->
     <script defer src="app.js"></script>
   </head>
+
   <body>
     <header>
-      <h1 style="margin: 0;">Kaiano Levine</h1>
+      <h1 style="margin: 0;">Deejay Set Collection</h1>
       <nav id="nav" aria-label="Site navigation"></nav>
     </header>
 
-    <main id="page">
-      <!-- routed content renders here -->
-    </main>
+    <main id="page"></main>
   </body>
 </html>
