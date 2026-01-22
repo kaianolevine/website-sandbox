@@ -1,14 +1,11 @@
 # Contact
 
 
-## Email:
-- kaiano.levine@gmail.com
+## Email: [kaiano.levine@gmail.com]
 
-## Facebook Profile:
-- https://www.facebook.com/kaiano.levine
+## Facebook Profile: [https://www.facebook.com/kaiano.levine]
 
-## Facebook Page:
-- https://www.facebook.com/kaianolevinewcs/
+## Facebook Page: [https://www.facebook.com/kaianolevinewcs/]
 
 ## YouTube:
 - https://www.youtube.com/c/KaianoLevine
