@@ -1,6 +1,4 @@
----
-title: Booking
----
+# Booking
 
 This site is a static view of my DJ set collection, generated from my data pipeline.
 
