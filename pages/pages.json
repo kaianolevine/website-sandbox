@@ -25,7 +25,7 @@
   },
   {
     "id": "Booking/Book-Now",
-    "title": "Booking"
+    "title": "Book Now"
   },
   {
     "id": "Booking/Press-Kit",
@@ -33,6 +33,6 @@
   },
   {
     "id": "dj-marvel/collection",
-    "title": "Full Set History"
+    "title": "Collection"
   }
 ]
