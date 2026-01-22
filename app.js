@@ -150,7 +150,6 @@ function renderPageHtml(title, html) {
   const page = document.getElementById("page");
   if (!page) return;
   page.innerHTML = `
-    <h2 style="margin: 0;">${escapeHtml(title)}</h2>
     <div id="page-content" style="margin-top: 12px; line-height: 1.55;">${html}</div>
   `;
 }
@@ -314,7 +313,7 @@ async function renderMarkdownPage(pageDef) {
   const fetchPath = encodeURI(path);
 
   const page = document.getElementById("page");
-  if (page) page.innerHTML = `<h2 style="margin:0;">${escapeHtml(title)}</h2><p style="color:#666;margin-top:10px;">Loading…</p>`;
+  if (page) page.innerHTML = `<p style="color:#666;margin-top:10px;">Loading…</p>`;
 
   try {
     const res = await fetch(fetchPath, { cache: "no-store" });
