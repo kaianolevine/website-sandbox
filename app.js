@@ -333,6 +333,21 @@ async function renderMarkdownPage(pageDef) {
     });
 
     renderMarkdownHtml(title, safeHtml);
+    // Default: open rendered markdown links in a new tab.
+    // Keep internal hash navigation ("#/...") in the same tab.
+    const pageContent = document.getElementById("page-content");
+    if (pageContent) {
+      pageContent.querySelectorAll("a[href]").forEach((a) => {
+        const href = a.getAttribute("href") || "";
+        if (!href) return;
+
+        // Keep SPA/internal navigation in the same tab
+        if (href.startsWith("#/") || href.startsWith("#")) return;
+
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      });
+    }
     await hydrateDjSetSummary(pageDef);
     await hydrateWidgets(pageDef);
   } catch (err) {
