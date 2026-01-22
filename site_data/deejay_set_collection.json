@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-21T08:59:55.224803+00:00",
+  "generated_at": "2026-01-22T04:54:23.438251+00:00",
   "dj_sets_folder_id": "1A0tKQ2DBXI1Bt9h--olFwnBNne3am-rL",
   "folders": [
     {
@@ -72,11 +72,6 @@
           "spreadsheet_id": "1GqpshC6n-dRr9WsVa71AT8_qAnZAPAI9xakCV2JuDjQ"
         },
         {
-          "label": "2026 Summary",
-          "url": "https://docs.google.com/spreadsheets/d/10mjV45ehl9fxOUoEHB_XNPv8LO3GI6V6s04vVISw8-s",
-          "spreadsheet_id": "10mjV45ehl9fxOUoEHB_XNPv8LO3GI6V6s04vVISw8-s"
-        },
-        {
           "label": "2025 Summary",
           "url": "https://docs.google.com/spreadsheets/d/1wtiCbz_S9kANKx68QGFRHpR40lGViaxkZIKYKkKIZ1U",
           "spreadsheet_id": "1wtiCbz_S9kANKx68QGFRHpR40lGViaxkZIKYKkKIZ1U"
@@ -132,6 +127,13 @@
       "name": "2026",
       "folder_id": "1vmbJzaWgrNXLu8NXQszccG0lCjzToF-C",
       "items": [
+        {
+          "date": "2026-01-21",
+          "title": "",
+          "label": "2026-01-21",
+          "url": "https://docs.google.com/spreadsheets/d/11z1HYANVMN1Ay7fu613_dODLeW8fZX8gP7fgYmY0JXs",
+          "spreadsheet_id": "11z1HYANVMN1Ay7fu613_dODLeW8fZX8gP7fgYmY0JXs"
+        },
         {
           "date": "2026-01-03",
           "title": "Countdown Swing Boston",
