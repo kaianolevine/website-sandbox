@@ -4,7 +4,7 @@
     "title": "Home"
   },
   {
-    "id": "about",
+    "id": "About",
     "title": "About"
   },
   {
@@ -28,31 +28,31 @@
     "title": "Press Kit"
   },
   {
-    "id": "dj-marvel/collection",
-    "title": "Collection"
+    "id": "DJ-Marvel",
+    "title": "DJ Marvel"
   },
   {
-    "id": "locate",
+    "id": "Locate",
     "title": "Locate"
   },
   {
-    "id": "contact",
+    "id": "Contact",
     "title": "Contact"
   },
   {
-    "id": "Tools/Set-History",
+    "id": "Resources/Set-History",
     "title": "Set History"
   },
   {
-    "id": "Tools/Recent-Played",
+    "id": "Resources/Recent-Played",
     "title": "Recent Played"
   },
   {
-    "id": "Tools/Routine-Music",
+    "id": "Resources/Routine-Music",
     "title": "Routine Music"
   },
   {
-    "id": "Tools/Submit-Music",
+    "id": "Resources/Submit-Music",
     "title": "Submit Music"
   },
   {
