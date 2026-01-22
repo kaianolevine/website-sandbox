@@ -1,15 +1,9 @@
 # Press Kit
 
-This site is a static view of my DJ set collection, generated from my data pipeline.
+[All Promo Materials](https://drive.google.com/drive/folders/10ndBnflLBuh7WquzTkoLgcAXwbtBT_YD?usp=sharing)
 
-- Collection data is published as JSON
-- The UI is a lightweight static site (Cloudflare Pages friendly)
-- These pages are just Markdown files rendered in the browser
+[Photos](https://drive.google.com/drive/folders/1ymvh7ryLPMKT1Gp-8PfWFmBXzez_LQRF?usp=sharing)
 
-All Promo Materials
+[Bios](https://drive.google.com/drive/folders/1V-EDrQqJ2-IZhbOl5A__CCdcFqTz8vVH?usp=drive_link)
 
-Photos
-
-Bios
-
-Videos
+[Videos](https://drive.google.com/drive/folders/17JeqgduhsLKlNLrErSqOFm4PbaQR3DTi?usp=sharing)

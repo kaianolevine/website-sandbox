@@ -2,7 +2,7 @@
 
 
 ## Email:
--kaiano.levine@gmail.com
+- kaiano.levine@gmail.com
 
 ## Facebook Profile:
 - https://www.facebook.com/kaiano.levine
