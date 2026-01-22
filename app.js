@@ -324,8 +324,12 @@ async function renderMarkdownPage(pageDef) {
     const rawHtml = window.marked.parse(md);
     const safeHtml = window.DOMPurify.sanitize(rawHtml, {
       USE_PROFILES: { html: true },
-      // Allow our markdown-embedded widgets/markers to survive sanitization
-      ADD_ATTR: ["data-dj-collection", "data-dj-set-summary", "data-dj-set-summary-query"],
+      ADD_TAGS: ["iframe"],
+      ADD_ATTR: [
+        "src", "style", "width", "height", "frameborder", "scrolling", "loading", "referrerpolicy",
+        "data-dj-collection", "data-dj-set-summary", "data-dj-set-summary-query",
+      ],
+      ALLOW_UNKNOWN_PROTOCOLS: false,
     });
 
     renderMarkdownHtml(title, safeHtml);
