@@ -1,7 +1,5 @@
 ---
-title: DJ Marvel — Sets
+title: Full Set History
 ---
-
-# DJ Marvel — Sets
 
 <div data-dj-collection></div>

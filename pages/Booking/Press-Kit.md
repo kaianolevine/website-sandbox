@@ -1,4 +1,6 @@
-# Press Kit
+---
+title: Press Kit
+---
 
 [All Promo Materials](https://drive.google.com/drive/folders/10ndBnflLBuh7WquzTkoLgcAXwbtBT_YD?usp=sharing)
 
