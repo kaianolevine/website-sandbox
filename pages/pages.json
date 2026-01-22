@@ -62,5 +62,17 @@
   {
     "id": "how-it-works",
     "title": "How it works"
+  },
+  {
+    "id": "about",
+    "title": "About"
+  },
+  {
+    "id": "contact",
+    "title": "Contact"
+  },
+  {
+    "id": "locate",
+    "title": "Locate"
   }
 ]
