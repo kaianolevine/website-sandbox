@@ -8,22 +8,6 @@
     "title": "About"
   },
   {
-    "id": "changelog",
-    "title": "Changelog"
-  },
-  {
-    "id": "contact",
-    "title": "Contact"
-  },
-  {
-    "id": "how-it-works",
-    "title": "How it works"
-  },
-  {
-    "id": "locate",
-    "title": "Locate"
-  },
-  {
     "id": "Booking/Book-Now",
     "title": "Book Now"
   },
@@ -34,5 +18,21 @@
   {
     "id": "dj-marvel/collection",
     "title": "Collection"
+  },
+  {
+    "id": "locate",
+    "title": "Locate"
+  },
+  {
+    "id": "contact",
+    "title": "Contact"
+  },
+  {
+    "id": "changelog",
+    "title": "Changelog"
+  },
+  {
+    "id": "how-it-works",
+    "title": "How it works"
   }
 ]
