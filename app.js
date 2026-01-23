@@ -227,7 +227,6 @@ async function renderMarkdownPage(pageDef) {
         a.setAttribute("rel", "noopener noreferrer");
       });
     }
-    await hydrateDjSetSummary(pageDef);
     await hydrateWidgets(pageDef);
   } catch (err) {
     renderPageHtml(title, `<p style="color:#b00020;">Failed to load ${escapeHtml(fetchPath)}: ${escapeHtml(err?.message || err)}</p>`);
