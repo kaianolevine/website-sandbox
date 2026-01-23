@@ -1,26 +1,11 @@
 {
-  "generated_at": "2026-01-21T04:43:56.746241+00:00",
+  "generated_at": "2026-01-22T18:25:07.723162+00:00",
   "dj_sets_folder_id": "1A0tKQ2DBXI1Bt9h--olFwnBNne3am-rL",
   "folders": [
     {
       "name": "Summary",
       "folder_id": "13TY0UaluxU3lkS4IRUajU5r8irjvHyJ6",
       "items": [
-        {
-          "label": "_TestingOnly_2026",
-          "url": "https://docs.google.com/spreadsheets/d/1lE33B6DcPnOTVq40wBcYn67Fr1geLOY1oJocmTjPNrY",
-          "spreadsheet_id": "1lE33B6DcPnOTVq40wBcYn67Fr1geLOY1oJocmTjPNrY"
-        },
-        {
-          "label": "_TestingOnly_2026",
-          "url": "https://docs.google.com/spreadsheets/d/1mzbTFcLNpegzA50jcdNma0XoJRd802yw9Eo-XOhCxq4",
-          "spreadsheet_id": "1mzbTFcLNpegzA50jcdNma0XoJRd802yw9Eo-XOhCxq4"
-        },
-        {
-          "label": "_TestingOnly_2026",
-          "url": "https://docs.google.com/spreadsheets/d/1VbEl9fz25iyWvOOBaL7VPvAPMbm4-CDinwrYBIgKDRo",
-          "spreadsheet_id": "1VbEl9fz25iyWvOOBaL7VPvAPMbm4-CDinwrYBIgKDRo"
-        },
         {
           "label": "_TestingOnly_2025",
           "url": "https://docs.google.com/spreadsheets/d/1rRZytxSuGDmrMFOzCe47BxfBmfsMVisVtp31v5JqEIk",
@@ -70,11 +55,6 @@
           "label": "_TestingOnly_2016",
           "url": "https://docs.google.com/spreadsheets/d/1GqpshC6n-dRr9WsVa71AT8_qAnZAPAI9xakCV2JuDjQ",
           "spreadsheet_id": "1GqpshC6n-dRr9WsVa71AT8_qAnZAPAI9xakCV2JuDjQ"
-        },
-        {
-          "label": "2026 Summary",
-          "url": "https://docs.google.com/spreadsheets/d/10mjV45ehl9fxOUoEHB_XNPv8LO3GI6V6s04vVISw8-s",
-          "spreadsheet_id": "10mjV45ehl9fxOUoEHB_XNPv8LO3GI6V6s04vVISw8-s"
         },
         {
           "label": "2025 Summary",
@@ -132,6 +112,13 @@
       "name": "2026",
       "folder_id": "1vmbJzaWgrNXLu8NXQszccG0lCjzToF-C",
       "items": [
+        {
+          "date": "2026-01-21",
+          "title": "Swingesota",
+          "label": "2026-01-21 Swingesota",
+          "url": "https://docs.google.com/spreadsheets/d/1JpcrVMRC0zPDc-vcCI2ZReoIfTkZroRxJE4vwUTH2PI",
+          "spreadsheet_id": "1JpcrVMRC0zPDc-vcCI2ZReoIfTkZroRxJE4vwUTH2PI"
+        },
         {
           "date": "2026-01-03",
           "title": "Countdown Swing Boston",
