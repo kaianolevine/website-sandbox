@@ -1,4 +1,5 @@
 import { renderDjCollectionInto } from "./src/widgets/djCollection/renderDjCollectionInto.js";
+import { hydrateWidgets } from "./src/widgets/widgets.js";
 /* =========================
    Utilities
 ========================= */
@@ -252,14 +253,6 @@ async function route(manifest) {
   }
 
   await renderMarkdownPage(pageDef);
-}
-
-async function hydrateWidgets(pageDef) {
-  // DJ Collection widgets
-  const collections = document.querySelectorAll("[data-dj-collection]");
-  for (const el of collections) {
-    await renderDjCollectionInto(el);
-  }
 }
 
 async function main() {
