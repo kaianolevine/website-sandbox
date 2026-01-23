@@ -6,7 +6,7 @@ Static site starter for a DJ set collection.
 
 - `index.html` — single-page shell with hash routing
 - `pages/*.md` — markdown “pages”
-- `site_data/deejay_set_collection.json` — data consumed by Home page
+- `public/v1/deejay_set_collection.json` — data consumed by Home page
 
 ## Local preview
 
@@ -52,7 +52,7 @@ There is **no build step** and **no server‑side code**.
 │   ├── about.md
 │   └── DJ Marvel/
 │       └── DJ Marvel Sets.md
-├── site_data/
+├── public/v1/
 │   └── deejay_set_collection.json
 └── src/
     ├── core/                  # Pure helpers (strings, urls, rendering)
@@ -121,7 +121,7 @@ Markdown files may include **HTML placeholders** that are hydrated at runtime.
 Widgets:
 - Are opt‑in
 - Do not affect static markdown rendering
-- Pull data from `site_data/deejay_set_collection.json`
+- Pull data from `public/v1/deejay_set_collection.json`
 
 ---
 

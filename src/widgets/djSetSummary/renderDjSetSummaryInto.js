@@ -13,7 +13,7 @@ export async function renderDjSetSummaryInto(container, query) {
 
   let data;
   try {
-    const res = await fetch("site_data/deejay_set_collection.json", { cache: "no-store" });
+    const res = await fetch("public/v1/deejay_set_collection.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (err) {
@@ -61,7 +61,7 @@ export async function renderDjSetSummaryInto(container, query) {
       <p>No sets found matching <strong>${escapeHtml(name)}</strong>.</p>
       <p style="color:#666; margin-top: 6px;">
         Matching is done against each item’s <code>title</code> and <code>label</code> in
-        <code>site_data/deejay_set_collection.json</code>.
+        <code>public/v1/deejay_set_collection.json</code>.
       </p>
       <p style="color:#666; margin-top: 6px;">
         Tip: set <code>data-dj-set-summary-query</code> on the div to match whatever text actually appears in your titles.
