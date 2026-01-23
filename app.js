@@ -254,7 +254,7 @@ async function renderDjCollectionInto(container) {
   container.innerHTML = `
     <p>
       Data source:
-      <a href="public/v1/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
+      <a href="/v1/deejay-sets/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
     </p>
 
     <label>Search:</label>
@@ -276,7 +276,7 @@ async function renderDjCollectionInto(container) {
 
   let data;
   try {
-    const res = await fetch("public/v1/deejay_set_collection.json", { cache: "no-store" });
+    const res = await fetch("/v1/deejay-sets/deejay_set_collection.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (err) {
@@ -373,7 +373,7 @@ async function renderDjSetSummaryInto(container, query) {
 
   let data;
   try {
-    const res = await fetch("public/v1/deejay_set_collection.json", { cache: "no-store" });
+    const res = await fetch("/v1/deejay-sets/deejay_set_collection.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (err) {
@@ -421,7 +421,7 @@ async function renderDjSetSummaryInto(container, query) {
       <p>No sets found matching <strong>${escapeHtml(name)}</strong>.</p>
       <p style="color:#666; margin-top: 6px;">
         Matching is done against each item’s <code>title</code> and <code>label</code> in
-        <code>public/v1/deejay_set_collection.json</code>.
+        <code>/v1/deejay-sets/deejay_set_collection.json</code>.
       </p>
       <p style="color:#666; margin-top: 6px;">
         Tip: set <code>data-dj-set-summary-query</code> on the div to match whatever text actually appears in your titles.

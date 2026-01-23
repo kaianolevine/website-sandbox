@@ -7,7 +7,7 @@ export async function renderDjCollectionInto(container) {
   container.innerHTML = `
     <p>
       Data source:
-      <a href="public/v1/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
+      <a href="/v1/deejay-sets/deejay_set_collection.json" target="_blank" rel="noopener">deejay_set_collection.json</a>
     </p>
 
     <label>Search:</label>
@@ -29,7 +29,7 @@ export async function renderDjCollectionInto(container) {
 
   let data;
   try {
-    const res = await fetch("public/v1/deejay_set_collection.json", { cache: "no-store" });
+    const res = await fetch("/v1/deejay-sets/deejay_set_collection.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
   } catch (err) {
