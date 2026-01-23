@@ -52,7 +52,7 @@ There is **no build step** and **no server‑side code**.
 │   ├── about.md
 │   └── DJ Marvel/
 │       └── DJ Marvel Sets.md
-├── public/v1/deejay-sets/
+├── v1/deejay-sets/
 │   └── deejay_set_collection.json
 └── src/
     ├── core/                  # Pure helpers (strings, urls, rendering)

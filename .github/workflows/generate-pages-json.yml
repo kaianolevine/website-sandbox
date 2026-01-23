@@ -6,7 +6,7 @@ on:
       - main
       - test-feature
     paths:
-      - "pages/**"
+      - "pages/**/*.md"
       - ".github/workflows/generate-pages-json.yml"
   workflow_dispatch: {}
 
