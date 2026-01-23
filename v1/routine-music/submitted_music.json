@@ -1,0 +1,961 @@
+{
+  "generated_at": "2026-01-23T18:48:01.916303+00:00",
+  "divisions": [
+    {
+      "division": "TheOpen2025",
+      "headers": [
+        "Partnership",
+        "Division",
+        "Version"
+      ],
+      "rows": [
+        [
+          "Aidan Keith-Hynes & Riley Crozier",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Attila Kobori & Jula Palenga",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Austin Kois & Anna Wallace",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Ben McHenry & Cameo McHenry",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Christopher Dumond & Emily Huang",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Conor McClure & Larisa Tingle",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Dillon Luther & Lindsay Mistretta",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Eric Byers & Maria Bileychik",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Hugo Miguez & Stacy Kay",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Jakub Jakoubek & Emeline Rochefeuille",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Jeff Wingo & Jade Bryan",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Joao Parada & Savana Barreau",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Joshua Schubert & Maina Vila Cobarsi",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Keerigan Rudd & Mia Primavera",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "KP Rutland & Bryn Anderson",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Kyle Fitzgerald  & Melodie Paletta",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Mathieu Compagnon & Vanessa Bachmann",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Philipp Wolff & Ekaterina Wolff",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Ryan Boz & Elizabeth Spann",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Sam Vaden & Nataliya Kane",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Sean Mckeever & Alyssa Mckeever",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Sebastian Quinones & Rachel  Shook",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Zac Skinner & Maddy Skinner",
+          "Classic",
+          "The Open 2025"
+        ],
+        [
+          "Aless Tondolo & Maëlle Jaciulet",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Clement Turpain & Evgenia Itkina",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Didier  Sellam & Melodie  Geneste",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Jaden Pfeiffer & MacKenzie Keister",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Joel Torgeson & Chantelle Pianetta",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Keerigan Rudd & Noelle Hoeppner ",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Kevin Kane & Nataliya Kane",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Maxwell Libbrecht & Jen Malcolm",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Paul Nunez & Shanna Porcari",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "PJ Turner & Mia Pastor",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Sebastian Quinones & Elina Sharipova",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Teddy SANCHEZ & Dianeva POIRSON",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Thibault Ramirez & Nicole Ramirez",
+          "Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Abigail Hodges & Rebecca Hodges",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "ambre hireche nogueira & celine fournier",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Augie Leija & Daniela  Alonso",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "aurélien bernard & elsa bernard",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Ben Dobson & Jillian Carroll",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Branden Strong & Shayla Bouise",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Brock Daniels & Ken Padron",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Cédric  Le Franc & Estelle  Chardonnens ",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Chase Warner & Rose Martin",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "David Guido & Talia Colon",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Diego Rivera & Taylor Linahan",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Florent Coïc & Héloïse Cossin",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Griffin Roy & Katie Brady",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Harrison Ramsey & Lilyjana Auclair",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Ivan Chen & Alyx McCarthey",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Jade Bryan & Christa Farmer",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "James Bartlett & Nicole Moes",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Jeanne Gelis  & Mahée Laybros ",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Jesse Brummett  & Lan VoBa",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Joel Gibson & Natasha Flowers",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Joseph Geluz & Sienna StClair",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Joseph Tong & Kristen Wallace",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Julien Teyssier & Emma Muller",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Layan Boucheta & Clarisse  Sammut",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Matt Davis & Kristen Shaw",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Maxwell Thew & Allison Reese",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Michiro Sagara & Hisaki Mino",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Miquel Menendez & Anni Hellwagen",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Omar Gonzalez & Giulia Rusch",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Raphael Ettedgui & Charline Grossard",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Robert Crocker & Sam Lingane ",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Shawn Mcgettigan  & Hannah Bonaguide",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Stéphane Dominguez & Arantxa Lebon",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Trenten Jackson & Haley Hauglum ",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Tucker Brown & Ava Farlow",
+          "Rising Star Classic",
+          "The Open 2025"
+        ],
+        [
+          "Andrew Roach & Abigail Roach",
+          "Rising Star Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Daniel Trepat & Chloé Ourties",
+          "Rising Star Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Ilon Weeldreyer & Gaia Read",
+          "Rising Star Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Miles Van de Wetering & Elise Renwick",
+          "Rising Star Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Nicholas Hughes & Beatrix Teng",
+          "Rising Star Showcase",
+          "The Open 2025"
+        ],
+        [
+          "Derek Leyva & Jennifer Norris",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "John Su & Joanna Meinl",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Julie Auclair",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Ryan Pflumm & Lara Deni",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Sebastian Schwind & Sarah Latton",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Sébastien  Cadet & Blandine Iche",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "sylvain  poinçon & celine fournier",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Tom Cochran & Beverly Durand",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Tommy Schwegmann & Azucena Perez",
+          "Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Andreas Palenga & Tine Palenga",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Avner Uzan & Beverly Durand",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "David  Carter & Wendy Carter",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "James Bryant & Leah Bryant",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Keith Smith & Carmen Vaughn",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Marc Heldt & Sandra Friedrich",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "noël  charbonnier & chantal charbonnier",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Philippe Ferracci & Marie Carmen Sanchez",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Richard DeFelice & Susan DeFelice",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Tom Cochran & Dawne Haight",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Woody Bretz & Louise Bretz",
+          "Masters",
+          "The Open 2025"
+        ],
+        [
+          "Augie  Leija & Sydney Koshnick",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Ben McHenry & Ashley Smith",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Ben McHenry & Joslyn Mendez",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Cedric Le Franc & Savana Barreau",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Conor McClure & Charity Brain",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "James Wyke & Cali Corkran",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Jesse Lopez & Ella Bell",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Jesse Lopez & Zoe Osborn",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Joao Parada & Estelle Chardonnens",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Joel Torgeson & Sienna St. Claire",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Joey Sogluizzo & Claire Flogel",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Jonathan Wolfgram & Ellis Permann",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Keerigan Rudd & Nicole Bruner",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Lee Easton & Grainne Farrell",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Amber Dillenkoffer",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Jen Schanaberger",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Linda Guetterman",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Sara Rose Goin",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Noelle Hoeppner & Makena Loveland",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Omar Gonzalez & Kyra Peters",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Paul Warden & Leiya Crossbi ",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Philippe Amar & Mathilde Rallet",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "PJ Turner & Jean Barnett",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "River Harmon & Elana Lassiter",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "River Harmon & Maggie  Jackson ",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Ryan Pflumm & Bethany Degraff",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "scott campbell & graylen kirby ",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Scott Campbell & Liv Kirby",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Za Thomaier & Pamela Marr",
+          "ProAm Follower Open",
+          "The Open 2025"
+        ],
+        [
+          "Augie  Leija & Jasmine Weber",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Augie Leija & Vicki Gilpin",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Derek Leyva & Christine Zoyhofski ",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Jean-Nicolas Winter & Titaua Richecoeur",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Joao Parada & Denise Richardet",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "John Su & Patty Houston",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Kevin Kane & Melissa Liao",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Cory Johnson",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Diana Burkholder",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Joyce Fisher",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Tanya Wells",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Matt Auclair & Tiffany Good",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Ryan Pflumm & Teresa (TJ)  Flowers",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Sebastien Cadet & Marie Carmen Sanchez",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Tommy Schwegmann & Malin Nyberg",
+          "ProAm Follower Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "aurélien bernard & celine fournier",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Ben Smith & Autumn Jones ",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Bryan VELTZ & Maïna VILA COBARSI",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Chris Tuey & Lara Deni",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Connor Sanders & Autumn Jones",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Easton Brown & Nickie  Johnson Taylor",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Easton England & Noelle Hoeppner",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Harish Kommineni & Ariel Peck",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Jubilee Rasmussen & Jeanne DeGeyter",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Michael Roberge & Mackenzie Keister",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Scott Fleischer & Elizabeth Wyke",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Tucker  Brown & Nickie Johnson Taylor",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Yohan  Poupard  & Melodie  Paletta",
+          "ProAm Leader Open",
+          "The Open 2025"
+        ],
+        [
+          "Divy Ravindranath & Kathleen Sun",
+          "ProAm Leader Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Eric Fernandez & Nataliya Kane",
+          "ProAm Leader Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Kameron Moore & Elizabeth Wyke",
+          "ProAm Leader Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Stephen Barnes & Alex Raposo",
+          "ProAm Leader Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Wendall McClellan & Lara Deni",
+          "ProAm Leader Sophisticated",
+          "The Open 2025"
+        ],
+        [
+          "Jeanne Gelis  & Mahée Laybros ",
+          "Young Adult",
+          "The Open 2025"
+        ],
+        [
+          "Mahee Laybros & Jeanne Gelis",
+          "Young Adult",
+          "The Open 2025"
+        ],
+        [
+          "Parker Caldwell & Saddie Honeycutt",
+          "Young Adult",
+          "The Open 2025"
+        ],
+        [
+          "Jukin Juniors",
+          "Teams",
+          "The Open 2025"
+        ],
+        [
+          "Junior Shag Dance Team",
+          "Teams",
+          "The Open 2025"
+        ],
+        [
+          "Masterclass 2025",
+          "Teams",
+          "The Open 2025"
+        ],
+        [
+          "TNT",
+          "Teams",
+          "The Open 2025"
+        ],
+        [
+          "top gones team",
+          "Teams",
+          "The Open 2025"
+        ]
+      ]
+    },
+    {
+      "division": "ProAm FollowerAm",
+      "headers": [
+        "Timestamp",
+        "Partnership",
+        "Division",
+        "Routine Name",
+        "Descriptor",
+        "Version"
+      ],
+      "rows": [
+        [
+          "12/19/2025 20:46:02",
+          "Roberto Corporan & Rae Tardif",
+          "ProAm FollowerAm",
+          "Mountain Mama",
+          "Full Speed",
+          "1"
+        ]
+      ]
+    },
+    {
+      "division": "NovInt Routines",
+      "headers": [
+        "Timestamp",
+        "Partnership",
+        "Division",
+        "Routine Name",
+        "Descriptor",
+        "Version"
+      ],
+      "rows": [
+        [
+          "12/27/2025 13:19:34",
+          "Daniel Desjardin & Maretta Morovitz",
+          "NovInt Routines",
+          "Movement",
+          "",
+          "1"
+        ],
+        [
+          "12/24/2025 23:45:32",
+          "Riley Grecco & Rachel Little",
+          "NovInt Routines",
+          "She Got Me",
+          "N/A",
+          "1"
+        ]
+      ]
+    },
+    {
+      "division": "Rising Star Classic",
+      "headers": [
+        "Timestamp",
+        "Partnership",
+        "Division",
+        "Routine Name",
+        "Descriptor",
+        "Version"
+      ],
+      "rows": [
+        [
+          "12/27/2025 13:17:03",
+          "Daniel Desjardin & Melissa Miller",
+          "Rising Star Classic",
+          "Rockstar",
+          "",
+          "1"
+        ],
+        [
+          "1/23/2026 12:26:23",
+          "Keith Stremmel & Debbie Adams",
+          "Rising Star Classic",
+          "Say I Won't",
+          "Edit 2",
+          "1"
+        ],
+        [
+          "1/1/2026 14:16:21",
+          "Pierre-Olivier Bastien-Dionne & Marie Phaneuf-Fournier",
+          "Rising Star Classic",
+          "",
+          "",
+          "1"
+        ],
+        [
+          "1/1/2026 9:18:43",
+          "Simon Girard & Isabelle Roy",
+          "Rising Star Classic",
+          "",
+          "",
+          "1"
+        ]
+      ]
+    },
+    {
+      "division": "ProAm LeaderAm",
+      "headers": [
+        "Timestamp",
+        "Partnership",
+        "Division",
+        "Routine Name",
+        "Descriptor",
+        "Version"
+      ],
+      "rows": [
+        [
+          "12/27/2025 13:25:54",
+          "Daniel Desjardin & Desirae Vasquez",
+          "ProAm LeaderAm",
+          "Work Song",
+          "",
+          "1"
+        ]
+      ]
+    }
+  ]
+}
