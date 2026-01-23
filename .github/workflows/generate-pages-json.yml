@@ -26,14 +26,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate pages/pages.json
+      - name: Generate /pages/pages.json
         run: |
           python3 - <<'PY'
           import json
           import re
           from pathlib import Path
 
-          PAGES_DIR = Path("pages")
+          PAGES_DIR = Path("public/pages")
           OUT_PATH = PAGES_DIR / "pages.json"
 
           def title_from_slug(slug: str) -> str:
@@ -147,7 +147,7 @@ jobs:
 
       - name: Commit changes if needed
         run: |
-          if git diff --quiet -- pages/pages.json; then
+          if git diff --quiet -- public/pages/pages.json; then
             echo "No changes to commit."
             exit 0
           fi
@@ -155,6 +155,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add pages/pages.json
+          git add public/pages/pages.json
           git commit -m "chore: regenerate pages/pages.json"
           git push

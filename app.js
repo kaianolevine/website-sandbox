@@ -59,10 +59,10 @@ function titleCaseFromFolder(folder) {
 ========================= */
 
 async function loadManifest() {
-  const res = await fetch("pages/pages.json", { cache: "no-store" });
-  if (!res.ok) throw new Error(`Failed to load pages/pages.json (HTTP ${res.status})`);
+  const res = await fetch("/pages/pages.json", { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to load /pages/pages.json (HTTP ${res.status})`);
   const json = await res.json();
-  if (!Array.isArray(json)) throw new Error("pages/pages.json must be an array");
+  if (!Array.isArray(json)) throw new Error("/pages/pages.json must be an array");
   return json;
 }
 
