@@ -1,3 +1,3 @@
-# Full Set History
+# Submitted Routine Music
 
-<div data-dj-collection></div>
+<div data-submitted-music></div>

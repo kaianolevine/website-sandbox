@@ -1,3 +1,3 @@
 # Full Set History
 
-<div data-dj-collection></div>
+<div data-live-history></div>
