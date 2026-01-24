@@ -1,5 +1,5 @@
-import { renderDjCollectionInto } from "./src/widgets/djCollection/renderDjCollectionInto.js";
 import { hydrateWidgets } from "./src/widgets/widgets.js";
+
 /* =========================
    Utilities
 ========================= */
