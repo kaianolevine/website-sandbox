@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-01-24T02:35:07.626316+00:00",
+  "generated_at": "2026-01-24T02:40:08.331666+00:00",
   "entries": [
+    {
+      "dt": "2026-01-23 21:38",
+      "title": "Boogie 2Nite",
+      "artist": "Tweet"
+    },
     {
       "dt": "2026-01-23 21:32",
       "title": "If It Feels Good (Then It Must Be)",
@@ -245,11 +250,6 @@
       "dt": "2026-01-03 22:10",
       "title": "AintNoSunshine BuddyGuy 80",
       "artist": ""
-    },
-    {
-      "dt": "2026-01-03 22:08",
-      "title": "The Motto (feat. Tiësto)",
-      "artist": "Ava Max"
     }
   ]
 }
