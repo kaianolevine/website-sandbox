@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-01-24T03:45:06.319283+00:00",
+  "generated_at": "2026-01-24T03:50:10.863214+00:00",
   "entries": [
+    {
+      "dt": "2026-01-23 22:48",
+      "title": "Celebration",
+      "artist": "Kool & The Gang"
+    },
+    {
+      "dt": "2026-01-23 22:46",
+      "title": "Purple Hat",
+      "artist": "Sofi Tukker"
+    },
     {
       "dt": "2026-01-23 22:44",
       "title": "Greenlight (Feat. Flo Rida & Lunchmoney Lewis)",
@@ -240,16 +250,6 @@
       "dt": "2026-01-21 22:01",
       "title": "A Tear In Space (Airlock)",
       "artist": "Glass Animals"
-    },
-    {
-      "dt": "2026-01-21 21:58",
-      "title": "I Should Have Stayed at Home",
-      "artist": "Ryan Mack"
-    },
-    {
-      "dt": "2026-01-21 21:56",
-      "title": "mas queso",
-      "artist": "FLOYD WONDER"
     }
   ]
 }
