@@ -38,60 +38,6 @@ function renderDivisionTable(divisionObj, query) {
   return { thead, tbody, count: filtered.length, queryActive: Boolean(q) };
 }
 
-function renderAllDivisionsTable(divisions, query) {
-  const q = normalizeForSearch(query);
-
-  // Choose the first available headers as the base; assume divisions share the same header schema.
-  const baseHeaders =
-    divisions.find((d) => Array.isArray(d?.headers) && d.headers.length > 0)?.headers || [];
-
-  const headers = ["Division", ...baseHeaders];
-
-  let total = 0;
-
-  const rowsHtml = divisions
-    .flatMap((d) => {
-      const divisionName = String(d?.division || "UnknownDivision");
-      const rows = normalizeRows(baseHeaders, d?.rows || []);
-
-      const filtered = rows.filter((r) => {
-        if (!q) return true;
-        // Include division name in search.
-        return normalizeForSearch([divisionName, ...r].join(" | ")).includes(q);
-      });
-
-      total += filtered.length;
-
-      return filtered.map((r) => {
-        const cells = [divisionName, ...r];
-        const tds = cells
-          .map(
-            (c) =>
-              `<td style="border-bottom:1px solid #f0f0f0; padding: 6px 4px;">${escapeHtml(
-                c || ""
-              )}</td>`
-          )
-          .join("");
-        return `<tr>${tds}</tr>`;
-      });
-    })
-    .join("");
-
-  const thead = headers
-    .map(
-      (h) =>
-        `<th style="text-align:left; border-bottom:1px solid #ddd; padding: 6px 4px;">${escapeHtml(
-          h
-        )}</th>`
-    )
-    .join("");
-
-  const tbody =
-    rowsHtml || `<tr><td colspan="${Math.max(headers.length, 1)}" style="color:#666;">No matching rows.</td></tr>`;
-
-  return { thead, tbody, count: total, queryActive: Boolean(q) };
-}
-
 export async function renderSubmittedMusicInto(container) {
   if (!container) return;
 
@@ -145,30 +91,11 @@ export async function renderSubmittedMusicInto(container) {
   const divisions = Array.isArray(data?.divisions) ? data.divisions : [];
   const divisionNames = divisions.map((d) => String(d?.division || "UnknownDivision"));
 
-  sel.innerHTML = [
-    `<option value="ALL">All Divisions</option>`,
-    ...divisionNames.map((name, i) => `<option value="${i}">${escapeHtml(name)}</option>`),
-  ].join("");
+  sel.innerHTML = divisionNames
+    .map((name, i) => `<option value="${i}">${escapeHtml(name)}</option>`)
+    .join("");
 
   const rerender = () => {
-    if (!divisions.length) {
-      theadRow.innerHTML = "";
-      tbody.innerHTML = `<tr><td style="color:#666;">No divisions found.</td></tr>`;
-      status.textContent = "";
-      return;
-    }
-
-    if (sel.value === "ALL") {
-      const { thead, tbody: bodyHtml, count, queryActive } = renderAllDivisionsTable(
-        divisions,
-        search.value
-      );
-      theadRow.innerHTML = thead;
-      tbody.innerHTML = bodyHtml;
-      status.textContent = queryActive ? `${count} matching row(s)` : `${count} total row(s)`;
-      return;
-    }
-
     const idx = Number(sel.value || 0);
     const d = divisions[idx];
     if (!d) {
@@ -177,7 +104,6 @@ export async function renderSubmittedMusicInto(container) {
       status.textContent = "";
       return;
     }
-
     const { thead, tbody: bodyHtml, count, queryActive } = renderDivisionTable(d, search.value);
     theadRow.innerHTML = thead;
     tbody.innerHTML = bodyHtml;
