@@ -1,0 +1,66 @@
+[
+  {
+    "id": "home",
+    "title": "Home"
+  },
+  {
+    "id": "About",
+    "title": "About"
+  },
+  {
+    "id": "Booking/Lessons-MN",
+    "title": "Lessons: Minnesota"
+  },
+  {
+    "id": "Booking/Lessons-Conventions",
+    "title": "Lessons: Conventions"
+  },
+  {
+    "id": "Booking/Meetings",
+    "title": "Meetings"
+  },
+  {
+    "id": "Booking/Booking",
+    "title": "Booking"
+  },
+  {
+    "id": "Booking/Press-Kit",
+    "title": "Press Kit"
+  },
+  {
+    "id": "DJ-Marvel",
+    "title": "DJ Marvel"
+  },
+  {
+    "id": "Locate",
+    "title": "Locate"
+  },
+  {
+    "id": "Contact",
+    "title": "Contact"
+  },
+  {
+    "id": "Resources/Set-History",
+    "title": "Set History"
+  },
+  {
+    "id": "Resources/Recent-Played",
+    "title": "Recent Played"
+  },
+  {
+    "id": "Resources/Routine-Music",
+    "title": "Routine Music"
+  },
+  {
+    "id": "Resources/Submit-Music",
+    "title": "Submit Music"
+  },
+  {
+    "id": "changelog",
+    "title": "Changelog"
+  },
+  {
+    "id": "how-it-works",
+    "title": "How It Works"
+  }
+]

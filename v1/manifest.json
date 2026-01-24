@@ -1,0 +1,33 @@
+{
+  "schema_version": "1",
+  "generated_at": null,
+  "base_path": "/v1",
+  "datasets": {
+    "deejay_sets": {
+      "title": "Deejay Sets",
+      "description": "Structured exports of DJ set collection data.",
+      "status": "active",
+      "endpoints": {
+        "collection": "/v1/deejay-sets/deejay_set_collection.json"
+      }
+    },
+    "live_history": {
+      "title": "Live History",
+      "description": "Exports from live music history tracking (placeholder).",
+      "status": "planned",
+      "endpoints": {}
+    },
+    "floor_trials": {
+      "title": "Floor Trials",
+      "description": "Exports related to floor trials / queue management (placeholder).",
+      "status": "planned",
+      "endpoints": {}
+    },
+    "routine_music": {
+      "title": "Routine Music",
+      "description": "Exports for routine music lists and metadata (placeholder).",
+      "status": "planned",
+      "endpoints": {}
+    }
+  }
+}
