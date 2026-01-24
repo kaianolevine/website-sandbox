@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-01-24T03:50:10.863214+00:00",
+  "generated_at": "2026-01-24T12:50:02.146601+00:00",
   "entries": [
+    {
+      "dt": "2026-01-24 07:47",
+      "title": "David Garwin & Kayla Smith",
+      "artist": "v1 | RisingStarClassic 2026 | YouMightLikeIt"
+    },
     {
       "dt": "2026-01-23 22:48",
       "title": "Celebration",
@@ -245,11 +250,6 @@
       "dt": "2026-01-21 22:04",
       "title": "Sad Story (Out Of Luck)",
       "artist": "Merk & Kremont"
-    },
-    {
-      "dt": "2026-01-21 22:01",
-      "title": "A Tear In Space (Airlock)",
-      "artist": "Glass Animals"
     }
   ]
 }
