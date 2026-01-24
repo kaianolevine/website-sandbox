@@ -33,11 +33,11 @@
   },
   {
     "id": "locate",
-    "title": "locate"
+    "title": "Locate"
   },
   {
     "id": "contact",
-    "title": "contact"
+    "title": "Contact"
   },
   {
     "id": "Resources/Set-History",
@@ -61,14 +61,6 @@
   },
   {
     "id": "how-it-works",
-    "title": "How it works"
-  },
-  {
-    "id": "Contact",
-    "title": "Contact"
-  },
-  {
-    "id": "Locate",
-    "title": "Locate"
+    "title": "How It Works"
   }
 ]
