@@ -1,6 +1,21 @@
 {
-  "generated_at": "2026-01-25T01:50:15.738477+00:00",
+  "generated_at": "2026-01-25T01:55:06.475200+00:00",
   "entries": [
+    {
+      "dt": "2026-01-24 20:54",
+      "title": "Only On A Saturday Night",
+      "artist": "Freddy's Dilemma"
+    },
+    {
+      "dt": "2026-01-24 20:53",
+      "title": "Celebration",
+      "artist": "Kool & The Gang"
+    },
+    {
+      "dt": "2026-01-24 20:51",
+      "title": "ISOU",
+      "artist": "SHAED"
+    },
     {
       "dt": "2026-01-24 20:49",
       "title": "Roseanne",
@@ -235,21 +250,6 @@
       "dt": "2026-01-24 08:15",
       "title": "Markus Smith & Hannah Creech",
       "artist": "v1 | ProamFolloweram 2026 | DoItLikeThisGetUp"
-    },
-    {
-      "dt": "2026-01-24 07:47",
-      "title": "David Garwin & Kayla Smith",
-      "artist": "v1 | RisingStarClassic 2026 | YouMightLikeIt"
-    },
-    {
-      "dt": "2026-01-23 22:48",
-      "title": "Celebration",
-      "artist": "Kool & The Gang"
-    },
-    {
-      "dt": "2026-01-23 22:46",
-      "title": "Purple Hat",
-      "artist": "Sofi Tukker"
     }
   ]
 }
