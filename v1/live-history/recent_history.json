@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-01-25T01:40:09.442375+00:00",
+  "generated_at": "2026-01-25T01:45:02.058985+00:00",
   "entries": [
+    {
+      "dt": "2026-01-24 20:42",
+      "title": "514 Denim",
+      "artist": "Estella Dawn"
+    },
     {
       "dt": "2026-01-24 20:39",
       "title": "Throw It Back (feat. Keith Urban)",
@@ -245,11 +250,6 @@
       "dt": "2026-01-23 22:41",
       "title": "Genetics (Feat. The Pussycat Dolls)",
       "artist": "Meghan Trainor"
-    },
-    {
-      "dt": "2026-01-23 22:40",
-      "title": "I Need A Good One (Feat. Mark Asari)",
-      "artist": "The Avener"
     }
   ]
 }
