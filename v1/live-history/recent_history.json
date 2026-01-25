@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-01-25T02:10:02.434591+00:00",
+  "generated_at": "2026-01-25T02:15:04.238578+00:00",
   "entries": [
+    {
+      "dt": "2026-01-24 21:11",
+      "title": "David Garwin & Kayla Smith",
+      "artist": "v1 | RisingStarClassic 2026 | YouMightLikeIt"
+    },
     {
       "dt": "2026-01-24 21:08",
       "title": "Rye Crowen & Erica Smith",
@@ -245,11 +250,6 @@
       "dt": "2026-01-24 14:30",
       "title": "It Runs Through Me",
       "artist": "Tom Misch, De La Soul"
-    },
-    {
-      "dt": "2026-01-24 09:06",
-      "title": "WendallMcClellan LaraDeni ProAmLeaderSophisticated Who sZoominWho",
-      "artist": "TheOpen2025 | ProAm Sophisticated Leader"
     }
   ]
 }
