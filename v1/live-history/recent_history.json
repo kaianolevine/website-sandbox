@@ -1,6 +1,21 @@
 {
-  "generated_at": "2026-01-25T01:45:02.058985+00:00",
+  "generated_at": "2026-01-25T01:50:15.738477+00:00",
   "entries": [
+    {
+      "dt": "2026-01-24 20:49",
+      "title": "Roseanne",
+      "artist": "Alec Bailey"
+    },
+    {
+      "dt": "2026-01-24 20:47",
+      "title": "Movin' And A Groovin'",
+      "artist": "Eugene \"Hideaway\" Bridges"
+    },
+    {
+      "dt": "2026-01-24 20:46",
+      "title": "Get Ready for This",
+      "artist": "2 Unlimited"
+    },
     {
       "dt": "2026-01-24 20:42",
       "title": "514 Denim",
@@ -235,21 +250,6 @@
       "dt": "2026-01-23 22:46",
       "title": "Purple Hat",
       "artist": "Sofi Tukker"
-    },
-    {
-      "dt": "2026-01-23 22:44",
-      "title": "Greenlight (Feat. Flo Rida & Lunchmoney Lewis)",
-      "artist": "Pitbull"
-    },
-    {
-      "dt": "2026-01-23 22:43",
-      "title": "Stuttering",
-      "artist": "Mario"
-    },
-    {
-      "dt": "2026-01-23 22:41",
-      "title": "Genetics (Feat. The Pussycat Dolls)",
-      "artist": "Meghan Trainor"
     }
   ]
 }
