@@ -1,7 +1,5 @@
 # Meetings
 
-[West Coast Swing - Booking Link]()
-
 [Tech Consultation - Booking Link]()
 
 [General Meeting - Booking Link]()
