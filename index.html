@@ -20,7 +20,41 @@
 
       .nav-group { border: 1px solid #ddd; border-radius: 8px; padding: 6px 8px; }
       .nav-group > summary { cursor: pointer; user-select: none; font-weight: 600; }
-      .nav-group-items { margin-top: 6px; display: flex; flex-direction: column; gap: 6px; }
+
+
+      .nav-dropdown { position: relative; display: inline-flex; flex-direction: column; }
+
+      .nav-dropdown-trigger {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 6px 8px;
+        background: transparent;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .nav-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        z-index: 10;
+        min-width: 220px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: white;
+        padding: 8px 10px;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      }
+
+      /* Show on hover or when the current route is inside the folder */
+      .nav-dropdown:hover .nav-dropdown-menu,
+      .nav-dropdown.open .nav-dropdown-menu {
+        display: block;
+      }
+
+      .nav-group-items { margin-top: 0; display: flex; flex-direction: column; gap: 6px; }
 
       main { margin-top: 18px; }
     </style>
