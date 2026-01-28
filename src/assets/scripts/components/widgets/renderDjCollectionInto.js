@@ -1,4 +1,5 @@
-import { escapeHtml } from "./strings.js";
+
+import { escapeHtml, normalizeForSearch, escapeAttr } from "./strings.js";
 
 export function renderDjCollection(data, query) {
   const q = normalizeForSearch(query);
