@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-24T12:59:45.715888+00:00",
+  "generated_at": "2026-01-24T23:28:26.554828+00:00",
   "divisions": [
     {
       "division": "TheOpen2025",
@@ -976,6 +976,48 @@
           "Daniel Desjardin & Desirae Vasquez",
           "ProAm LeaderAm",
           "Work Song",
+          "",
+          "1"
+        ]
+      ]
+    },
+    {
+      "division": "Teams",
+      "headers": [
+        "Timestamp",
+        "Partnership",
+        "Division",
+        "Routine Name",
+        "Descriptor",
+        "Version"
+      ],
+      "rows": [
+        [
+          "1/24/2026 16:57:38",
+          "",
+          "Teams",
+          "JT season 12",
+          "Freedom Swing 2026",
+          "1"
+        ]
+      ]
+    },
+    {
+      "division": "My Division Is Not Listed",
+      "headers": [
+        "Timestamp",
+        "Partnership",
+        "Division",
+        "Routine Name",
+        "Descriptor",
+        "Version"
+      ],
+      "rows": [
+        [
+          "1/24/2026 17:27:44",
+          "Erica EricaNoIdeaWasGivenNoInfo & Erica EricaIdkWasGivenNoInfo",
+          "My Division Is Not Listed",
+          "Swish",
           "",
           "1"
         ]

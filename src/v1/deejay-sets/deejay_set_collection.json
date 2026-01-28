@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-01-24T08:59:15.734615+00:00",
+  "generated_at": "2026-01-27T15:45:06.585712+00:00",
   "folders": [
     {
       "name": "Summary",
       "folder_id": "13TY0UaluxU3lkS4IRUajU5r8irjvHyJ6",
       "items": [
+        {
+          "label": "_TestingOnly_2026",
+          "url": "https://docs.google.com/spreadsheets/d/1SF0kyvLzPvsv93Z1wsVL1yz1Z3HL1oq0Rwo5-SFucdM",
+          "spreadsheet_id": "1SF0kyvLzPvsv93Z1wsVL1yz1Z3HL1oq0Rwo5-SFucdM"
+        },
         {
           "label": "_TestingOnly_2026",
           "url": "https://docs.google.com/spreadsheets/d/1l2_wI9tsbblMzLZShoy5_JmKVQDIzavaiuZ3r_92vKE",
@@ -62,8 +67,8 @@
         },
         {
           "label": "2026 Summary",
-          "url": "https://docs.google.com/spreadsheets/d/1MYKCQYjEeJYb6hYgw5C-q0UzS0r9lFO0o-tkgmqzzYc",
-          "spreadsheet_id": "1MYKCQYjEeJYb6hYgw5C-q0UzS0r9lFO0o-tkgmqzzYc"
+          "url": "https://docs.google.com/spreadsheets/d/1i0zG41QgpVx7cb-nR_CruNa4wDj3tV8Th33tc63eQKs",
+          "spreadsheet_id": "1i0zG41QgpVx7cb-nR_CruNa4wDj3tV8Th33tc63eQKs"
         },
         {
           "label": "2025 Summary",
@@ -121,6 +126,20 @@
       "name": "2026",
       "folder_id": "1vmbJzaWgrNXLu8NXQszccG0lCjzToF-C",
       "items": [
+        {
+          "date": "2026-01-24",
+          "title": "Freedom Swing Dance Challenge",
+          "label": "2026-01-24 Freedom Swing Dance Challenge",
+          "url": "https://docs.google.com/spreadsheets/d/19FvS0mvD-NxhUzmmsj5LYmxdhjuIYxbILly5uk9C3_0",
+          "spreadsheet_id": "19FvS0mvD-NxhUzmmsj5LYmxdhjuIYxbILly5uk9C3_0"
+        },
+        {
+          "date": "2026-01-23",
+          "title": "Freedom Swing Dance Challenge",
+          "label": "2026-01-23 Freedom Swing Dance Challenge",
+          "url": "https://docs.google.com/spreadsheets/d/18JxsTdNfAg0SVWHdq9q1gR4yvjhQoPY_bibNAYRcq9Q",
+          "spreadsheet_id": "18JxsTdNfAg0SVWHdq9q1gR4yvjhQoPY_bibNAYRcq9Q"
+        },
         {
           "date": "2026-01-21",
           "title": "Swingesota",
