@@ -1,173 +1,153 @@
-# website-sandbox-starter
+# Eleventy Excellent
 
-<https://website-sandbox.pages.dev/>  
-Static site starter for a DJ set collection.
+Easy to use Eleventy starter, based on the workflow suggested by Andy Bell's [buildexcellentwebsit.es](https://buildexcellentwebsit.es/).
 
-## Structure
+![GitHub Repo stars](https://img.shields.io/github/stars/madrilene/eleventy-excellent?style=flat-square&logo=github&logoColor=white&label=GitHub%20stars)
+[![Follow @lene@front-end.social](https://img.shields.io/mastodon/follow/109292536543732634?domain=https%3A%2F%2Ffront-end.social&style=flat-square&logo=Mastodon&logoColor=white&labelColor=%235B4BE1)](https://front-end.social/@lene)
 
-- `index.html` — single-page shell with hash routing
-- `pages/*.md` — markdown “pages”
-- `public/v1/deejay-sets/deejay_set_collection.json` — data consumed by Home page
+If you end up using this starter, feel free to send me a link, I'd love to see it!
 
-## Local preview
+- [Eleventy Excellent](#eleventy-excellent)
+	- [Preview](#preview)
+	- [Features](#features)
+	- [First steps](#first-steps)
+	- [Development](#development)
+		- [Install dependencies](#install-dependencies)
+		- [Working locally](#working-locally)
+		- [Creating a production build](#creating-a-production-build)
+	- [Built with Eleventy Excellent](#built-with-eleventy-excellent)
+	- [Credits and Thank yous](#credits-and-thank-yous)
 
-Any static server works. For example:
+## Preview
 
-```bash
-python -m http.server 8080
-```
+https://eleventy-excellent.netlify.app/
 
-Then open:
-- http://localhost:8080/#/home
-- http://localhost:8080/#/about
+## Features
 
-# website-sandbox
+**This starter includes:**
 
-Static, client‑side–only website for publishing DJ set collections and related pages.
-All content lives in markdown and JSON, with a small modular JavaScript runtime that
-handles navigation, routing, and optional interactive widgets.
+- **Cube Boilerplate**: Created by Andy Bell, available under the MIT License. [View Repository](https://github.com/Set-Creative-Studio/cube-boilerplate)
+- Accessible site navigation, editable in `src/_data/navigation.js`
+- Image optimization with Eleventy-img _([see blog post](https://eleventy-excellent.netlify.app/blog/post-with-an-image/))_
+- Youtube embed with lite-youtube _([see blog post](https://eleventy-excellent.netlify.app/blog/post-with-a-video/))_
+- Easy resource fetching with eleventy-fetch _([see blog post](https://eleventy-excellent.netlify.app/blog/post-with-fetched-content/))_
+- Syntax highlighting via eleventy-plugin-syntaxhighlight _([see blog post](https://eleventy-excellent.netlify.app/blog/post-with-some-code/))_
+- Advanced markdown handling _([see blog post](https://eleventy-excellent.netlify.app/blog/post-with-all-the-markdown/))_
+- 301 redirects for Netlify _([see blog post](https://eleventy-excellent.netlify.app/blog/post-with-301-redirects/))_
+- Automatically generated Open Graph images for blog posts _([see blog post](https://eleventy-excellent.netlify.app/blog/open-graph-images/))_
+- Tailwind CSS - but not how you might expect _([see blog post](https://eleventy-excellent.netlify.app/blog/what-is-tailwind-css-doing-here/))_
+- XML-sitemap
+- dayjs handling dates & times
+- Bundling via esbuild
+- RSS feed (now you can add more than one)
+- Links to platforms and social media profiles
+- Mastodon domain verification snippet
+- carbon.txt - to show that their digital infrastructure runs on green electricity
+- Accessible dark and light mode based on user preference and custom toggle
+- Tags in blog posts
+- Accessible blog pagination
+- A styleguide™
 
----
+## First steps
 
-## High‑level design
+[Read the Get started docs!](https://eleventy-excellent.netlify.app/get-started/)
 
-This site is a **single‑page application (SPA)** with:
-- Hash‑based routing (`#/page-id`)
-- Markdown files as the primary content source
-- A JSON‑driven navigation manifest
-- Optional embedded widgets for dynamic data (DJ collections, summaries, etc.)
+## Development
 
-There is **no build step** and **no server‑side code**.
-
----
-
-## Directory structure
-
-```
-.
-├── index.html                 # App shell (loads app.js as an ES module)
-├── app.js                     # Entry point (wires nav + router)
-├── pages/
-│   ├── pages.json             # Navigation manifest (ORDER MATTERS)
-│   ├── home.md                # Home page (may be empty)
-│   ├── about.md
-│   └── DJ Marvel/
-│       └── DJ Marvel Sets.md
-├── v1/deejay-sets/
-│   └── deejay_set_collection.json
-└── src/
-    ├── core/                  # Pure helpers (strings, urls, rendering)
-    ├── nav/                   # Manifest loading + navbar rendering
-    ├── router/                # Hash routing
-    ├── markdown/              # Markdown loading + sanitization
-    └── widgets/               # Optional dynamic components
-```
-
----
-
-## Pages & navigation
-
-### `pages/pages.json`
-
-This file is the **source of truth** for navigation order.
-
-- Pages appear in the navbar **exactly in the order listed**
-- Folder paths (e.g. `DJ Marvel/DJ Marvel Sets`) create dropdown menus
-- Any `.md` file not referenced here may be appended automatically by tooling,
-  but existing order is always preserved
-
-Example:
-
-```json
-[
-  { "id": "home", "title": "Home" },
-  { "id": "about", "title": "About" },
-  { "id": "DJ Marvel/DJ Marvel Sets", "title": "DJ Marvel — Sets" }
-]
-```
-
-### Markdown pages
-
-Each page ID maps to:
+### Install dependencies
 
 ```
-pages/<id>.md
+npm install
 ```
 
-Examples:
-- `about` → `pages/about.md`
-- `DJ Marvel/DJ Marvel Sets` → `pages/DJ Marvel/DJ Marvel Sets.md`
+### Working locally
 
-Only the **literal markdown content** is rendered — no title injection or front‑matter
-is required.
-
----
-
-## Widgets (optional dynamic content)
-
-Markdown files may include **HTML placeholders** that are hydrated at runtime.
-
-### DJ collection (full library)
-
-```html
-<div data-dj-collection></div>
-```
-
-### DJ set summary (filtered by name)
-
-```html
-<div data-dj-set-summary data-dj-set-summary-query="DJ Marvel"></div>
-```
-
-Widgets:
-- Are opt‑in
-- Do not affect static markdown rendering
-- Pull data from `/v1/deejay-sets/deejay_set_collection.json`
-
----
-
-## Link behavior
-
-All external links rendered from markdown automatically open in a new tab:
+Starts watch tasks to compile when changes detected
 
 ```
-target="_blank" rel="noopener noreferrer"
+npm start
 ```
 
-Internal hash links (`#/page`) are unaffected.
+### Creating a production build
 
----
+Minify JS, CSS and HTML.
 
-## Local development
-
-Any static server works:
-
-```bash
-python -m http.server 8080
+```
+npm run build
 ```
 
-Then open:
+## Built with Eleventy Excellent
 
-- http://localhost:8080/#/home
-- http://localhost:8080/#/about
+[Sites that are based on / built with Eleventy Excellent. ](https://eleventy-excellent.netlify.app/built-with/)
+Add your site by submitting a pull request! :)
 
----
+## Credits and Thank yous
 
-## Deployment
+**Andy Bell**
 
-This site is compatible with:
-- Cloudflare Pages
-- GitHub Pages
-- Any static hosting provider
+> Be the browser's mentor, not its micromanager. Give the browser some solid rules and hints, then let it make the right decisions for the people that visit it, based on their device, connection quality and capabilities.
 
-No build or bundling step is required.
+- https://buildexcellentwebsit.es/
+- https://cube.fyi/
+- https://learneleventyfromscratch.com/
 
----
+**Heydon Pickering**
 
-## Philosophy
+Heydon creates some invaluable resources.
 
-- Markdown first
-- JSON for structure
-- JavaScript only where behavior is needed
-- No frameworks
-- No build tooling
+- https://every-layout.dev/
+- https://inclusive-components.design/
+
+**Zach Leatherman**
+
+Zach is developing Eleventy and is constantly making it even better!
+
+- https://www.11ty.dev/
+- https://www.zachleat.com/
+
+**Stephanie Eckles**
+
+Stephanie provides a lot of resources for Eleventy and modern CSS.
+
+- https://smolcss.dev/
+- https://moderncss.dev/
+
+**Ryan Mulligan**
+
+I'm using Ryan's example of a breakout wrapper on this site.
+
+Also have a look at those codepens!
+
+- https://ryanmulligan.dev/
+- https://codepen.io/hexagoncircle/
+
+**Sara Soueidan**
+
+I took a close look at Sara's recommendations for accessible theme switch and pagination in the Practical Accessibility course
+
+- https://practical-accessibility.today/
+- https://www.sarasoueidan.com/
+
+**Steven Woodson**
+
+The style guide was inspired by a [great talk on the Eleventy Meetup](https://www.youtube.com/watch?v=3mhA2bH6q8s). Steven also wrote a [blog post](https://stevenwoodson.com/blog/eleventy-style-guide-generator-step-by-step-guide-adding-to-an-existing-site/) about that.
+
+**Aleksandr Hovhannisyan**
+
+Aleksandr seems to value a well-structured project just as much as I do. It was the repo from aleksandrhovhannisyan.com that inspired me to write the article [Organizing the Eleventy config file](https://www.lenesaile.com/en/blog/organizing-the-eleventy-config-file/). The 301 redirect solution I'm using is from Aleksandr's article.
+
+- https://github.com/AleksandrHovhannisyan
+- https://www.aleksandrhovhannisyan.com/blog/eleventy-netlify-redirects/
+
+**Manuel Matuzović**
+
+Manuel is an accessibility expert. The menu I was using as default up to v2, is very much inspired by an article Manuel wrote on web.dev.
+
+- https://web.dev/website-navigation/
+- https://www.matuzo.at/
+
+**Bernard Nijenhuis**
+
+Bernard wrote the article on which the Open Graph Images implementation is based.
+
+- https://bnijenhuis.nl/notes/automatically-generate-open-graph-images-in-eleventy/
