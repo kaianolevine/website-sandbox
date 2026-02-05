@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-04T08:59:24.048128+00:00",
+  "generated_at": "2026-02-05T05:49:32.642113+00:00",
   "folders": [
     {
       "name": "Summary",
@@ -66,11 +66,6 @@
           "spreadsheet_id": "1GqpshC6n-dRr9WsVa71AT8_qAnZAPAI9xakCV2JuDjQ"
         },
         {
-          "label": "2026 Summary",
-          "url": "https://docs.google.com/spreadsheets/d/1i0zG41QgpVx7cb-nR_CruNa4wDj3tV8Th33tc63eQKs",
-          "spreadsheet_id": "1i0zG41QgpVx7cb-nR_CruNa4wDj3tV8Th33tc63eQKs"
-        },
-        {
           "label": "2025 Summary",
           "url": "https://docs.google.com/spreadsheets/d/1wtiCbz_S9kANKx68QGFRHpR40lGViaxkZIKYKkKIZ1U",
           "spreadsheet_id": "1wtiCbz_S9kANKx68QGFRHpR40lGViaxkZIKYKkKIZ1U"
@@ -126,6 +121,13 @@
       "name": "2026",
       "folder_id": "1vmbJzaWgrNXLu8NXQszccG0lCjzToF-C",
       "items": [
+        {
+          "date": "2026-02-04",
+          "title": "Swingesota",
+          "label": "2026-02-04 Swingesota",
+          "url": "https://docs.google.com/spreadsheets/d/1RoVLit_cAJPZBeFYzSwHc7vADV_fYLbuhnt4NdyR2Sk",
+          "spreadsheet_id": "1RoVLit_cAJPZBeFYzSwHc7vADV_fYLbuhnt4NdyR2Sk"
+        },
         {
           "date": "2026-01-24",
           "title": "Freedom Swing Dance Challenge",
