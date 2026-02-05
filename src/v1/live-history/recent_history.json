@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-02-05T05:30:04.584578+00:00",
+  "generated_at": "2026-02-05T05:35:05.564649+00:00",
   "entries": [
+    {
+      "dt": "2026-02-04 23:31",
+      "title": "Your Shirt",
+      "artist": "Chelsea Cutler"
+    },
     {
       "dt": "2026-02-04 23:27",
       "title": "Genie in a Bottle",
@@ -245,11 +250,6 @@
       "dt": "2026-01-24 21:11",
       "title": "David Garwin & Kayla Smith",
       "artist": "v1 | RisingStarClassic 2026 | YouMightLikeIt"
-    },
-    {
-      "dt": "2026-01-24 21:08",
-      "title": "Rye Crowen & Erica Smith",
-      "artist": "v1 | ProAmLeader 2026 | Swish"
     }
   ]
 }
