@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-02-05T05:25:05.399136+00:00",
+  "generated_at": "2026-02-05T05:30:04.584578+00:00",
   "entries": [
+    {
+      "dt": "2026-02-04 23:27",
+      "title": "Genie in a Bottle",
+      "artist": "Oshri"
+    },
+    {
+      "dt": "2026-02-04 23:25",
+      "title": "If I Ain't Got You (feat. Kenton Chen)",
+      "artist": "Scary Pockets"
+    },
     {
       "dt": "2026-02-04 23:20",
       "title": "Daddy Issues",
@@ -240,16 +250,6 @@
       "dt": "2026-01-24 21:08",
       "title": "Rye Crowen & Erica Smith",
       "artist": "v1 | ProAmLeader 2026 | Swish"
-    },
-    {
-      "dt": "2026-01-24 21:05",
-      "title": "WendallMcClellan LaraDeni ProAmLeaderSophisticated Who sZoominWho",
-      "artist": "TheOpen2025 | ProAm Sophisticated Leader"
-    },
-    {
-      "dt": "2026-01-24 21:02",
-      "title": "Markus Smith & Hannah Creech",
-      "artist": "v1 | ProamFolloweram 2026 | DoItLikeThisGetUp"
     }
   ]
 }
